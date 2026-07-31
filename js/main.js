@@ -1,6 +1,9 @@
 /* ============ data: every live page, same content as the GitHub profile ============ */
 const FIGSETS = {
   1: [ // §01 AI Agents & Sandboxes
+    { slug: "wasted-cycles", url: "https://zozo123.github.io/wasted-cycles/",
+      image: "https://zozo123.github.io/wasted-cycles/og.png",
+      title: "Wasted Cycles", tldr: "Find the machine time blocking agent work — local traces and GitHub Actions latency." },
     { slug: "t2t-vs-grch38", url: "https://zozo123.github.io/t2t-vs-grch38/",
       image: "https://zozo123.github.io/t2t-vs-grch38/og.png",
       title: "What T2T Changed", tldr: "GRCh38 → T2T-CHM13 delta, computed genome-wide by a Claude Code sandbox harness." },
@@ -58,8 +61,7 @@ function thumbHTML(p) {
   const src = p.image || `assets/thumbs/${p.slug}.jpg`;
   return `
     <span class="figure-thumb">
-      <img src="${src}" alt="${p.title} — live page screenshot" loading="lazy"
-           onerror="this.parentNode.classList.add('thumb-missing')">
+      <img src="${src}" alt="${p.title} — live page screenshot" width="760" height="475" loading="lazy">
     </span>`;
 }
 function captionHTML(n) {
@@ -97,6 +99,9 @@ document.querySelectorAll(".figure-grid").forEach((grid) => {
         ${thumbHTML(p)}${captionHTML(n)}${bodyHTML(p)}
       </a>`;
   }).join("");
+  grid.querySelectorAll(".figure-thumb img").forEach((image) => {
+    image.addEventListener("error", () => image.parentNode.classList.add("thumb-missing"));
+  });
 });
 
 /* ============ masthead date ============ */
@@ -104,10 +109,16 @@ const d = new Date();
 document.getElementById("today-date").textContent =
   d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }).toUpperCase();
 
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 /* ============ hero load-in ============ */
-requestAnimationFrame(() => {
-  document.querySelectorAll(".in-load").forEach((el) => el.classList.add("in"));
-});
+if (reduceMotion) {
+  document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
+} else {
+  requestAnimationFrame(() => {
+    document.querySelectorAll(".in-load").forEach((el) => el.classList.add("in"));
+  });
+}
 
 /* ============ scroll reveal ============ */
 const io = new IntersectionObserver((entries) => {
@@ -115,7 +126,9 @@ const io = new IntersectionObserver((entries) => {
     if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
   });
 }, { threshold: 0.08, rootMargin: "0px 0px -4% 0px" });
-document.querySelectorAll(".reveal:not(.in-load)").forEach((el) => io.observe(el));
+if (!reduceMotion) {
+  document.querySelectorAll(".reveal:not(.in-load)").forEach((el) => io.observe(el));
+}
 
 /* ============ hero counters ============ */
 const counterIO = new IntersectionObserver((entries) => {
@@ -132,4 +145,10 @@ const counterIO = new IntersectionObserver((entries) => {
     requestAnimationFrame(tick);
   });
 }, { threshold: 0.5 });
-document.querySelectorAll(".stat-n").forEach((el) => counterIO.observe(el));
+document.querySelectorAll(".stat-n").forEach((el) => {
+  if (reduceMotion) {
+    el.textContent = el.dataset.count;
+  } else {
+    counterIO.observe(el);
+  }
+});
