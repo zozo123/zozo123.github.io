@@ -1,0 +1,58 @@
+name: Pages contract
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-contract-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: HTML, scripts, and installer
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Validate homepage HTML
+        run: npx --yes html-validate@11.6.0 index.html
+
+      - name: Validate browser JavaScript
+        run: node --check js/main.js
+
+      - name: Validate installer shell
+        run: shellcheck --shell=sh --severity=style w
+
+      - name: Verify canonical installer parity
+        run: |
+          set -eu
+          curl --fail --silent --show-error --location \
+            https://raw.githubusercontent.com/zozo123/wasted-cycles/main/run \
+            --output /tmp/wasted-cycles-run
+          if ! cmp -s w /tmp/wasted-cycles-run; then
+            echo "::error::w has drifted from zozo123/wasted-cycles main/run"
+            diff -u w /tmp/wasted-cycles-run || true
+            exit 1
+          fi
+
+      - name: Exercise latest and pinned installs
+        run: |
+          set -eu
+          latest="$(sh ./w --version)"
+          pinned="$(WASTED_CYCLES_VERSION=v0.6.0 sh ./w --version)"
+          echo "latest: $latest"
+          echo "pinned: $pinned"
+          case "$latest" in
+            v[0-9]*.[0-9]*.[0-9]*) ;;
+            *) echo "unexpected latest version: $latest" >&2; exit 1 ;;
+          esac
+          [ "$pinned" = "v0.6.0" ]

@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f6f1e6">
+<meta name="color-scheme" content="light">
 <title>Yossi Eliaz — Computational Scientist &amp; Educator</title>
 <meta name="description" content="Yossi Eliaz — PhD Physics (Genomics & AI). Interactive essays, field guides and live experiments on AI agents, sandboxes and quant finance.">
 <meta property="og:title" content="Yossi Eliaz — Computational Scientist & Educator">
@@ -13,10 +15,13 @@
 <link rel="icon" href="https://avatars.githubusercontent.com/u/553010?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://media.giphy.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<a class="skip-link mono" href="#main">Skip to Content</a>
 
 <svg class="grain-defs" width="0" height="0" aria-hidden="true">
   <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
@@ -26,10 +31,10 @@
 <header class="masthead">
   <div class="masthead-inner">
     <span class="mono mast-id">Y.&nbsp;Eliaz — Collected&nbsp;Works</span>
-    <nav class="mast-nav mono">
+    <nav class="mast-nav mono" aria-label="Primary">
       <a href="#writing">§01 Agents</a>
       <a href="#essays">§02 Essays</a>
-      <a href="https://zozo123.github.io/the-living-layer/" target="_blank" rel="noopener" style="color:#ff2d2d;font-weight:500">THE LIVING LAYER</a>
+      <a class="mast-feature" href="https://zozo123.github.io/the-living-layer/" target="_blank" rel="noopener">THE LIVING LAYER</a>
       <a href="#quant">§03 Quant</a>
       <a href="#stats">§04 Stats</a>
       <a href="#planners">§05 Planners</a>
@@ -37,6 +42,8 @@
     </nav>
   </div>
 </header>
+
+<main id="main">
 
 <!-- ===================== HERO : preprint title block ===================== -->
 <section class="hero">
@@ -51,7 +58,7 @@
     <span class="ht-line hero-title-row reveal in-load d2">
       <em>Eliaz</em>
       <span class="hero-portrait" aria-hidden="true">
-        <img src="https://media.giphy.com/media/9zXG9hZsLAa3x4xEaV/giphy.gif" alt="">
+        <img src="https://media.giphy.com/media/9zXG9hZsLAa3x4xEaV/giphy.gif" alt="" width="256" height="256" fetchpriority="high">
       </span>
     </span>
   </h1>
@@ -80,7 +87,7 @@
       <span class="mono toc-head">Contents</span>
       <ol class="mono">
         <li><a href="#latest"><span class="toc-no">✦</span><span class="toc-t">Latest essay</span><span class="toc-dots"></span><span class="toc-n">new</span></a></li>
-        <li><a href="#writing"><span class="toc-no">§01</span><span class="toc-t">AI Agents &amp; Sandboxes</span><span class="toc-dots"></span><span class="toc-n">14</span></a></li>
+        <li><a href="#writing"><span class="toc-no">§01</span><span class="toc-t">AI Agents &amp; Sandboxes</span><span class="toc-dots"></span><span class="toc-n">16</span></a></li>
         <li><a href="#essays"><span class="toc-no">§02</span><span class="toc-t">Deep Dives &amp; Essays</span><span class="toc-dots"></span><span class="toc-n">04</span></a></li>
         <li><a href="#quant"><span class="toc-no">§03</span><span class="toc-t">Quant Finance</span><span class="toc-dots"></span><span class="toc-n">02</span></a></li>
         <li><a href="#stats"><span class="toc-no">§04</span><span class="toc-t">Stats</span><span class="toc-dots"></span><span class="toc-n">02</span></a></li>
@@ -90,23 +97,23 @@
   </div>
 
   <div class="hero-stats reveal in-load d5">
-    <div class="stat"><span class="stat-n" data-count="196">0</span><span class="mono stat-l">public repos</span></div>
-    <div class="stat"><span class="stat-n" data-count="21">0</span><span class="mono stat-l">live pages here</span></div>
-    <div class="stat"><span class="stat-n" data-count="15">0</span><span class="mono stat-l">years on GitHub</span></div>
-    <div class="stat"><span class="stat-n" data-count="35">0</span><span class="mono stat-l">followers</span></div>
+    <div class="stat"><span class="stat-n" data-count="249">249</span><span class="mono stat-l">public repos</span></div>
+    <div class="stat"><span class="stat-n" data-count="41">41</span><span class="mono stat-l">live pages here</span></div>
+    <div class="stat"><span class="stat-n" data-count="15">15</span><span class="mono stat-l">years on GitHub</span></div>
+    <div class="stat"><span class="stat-n" data-count="40">40</span><span class="mono stat-l">followers</span></div>
   </div>
 </section>
 
 <!-- ===================== MISSION 001 — THE LIVING LAYER (flagship vision) ===================== -->
-<div style="background:#000;color:#f5f5f5;padding:3.2vh 6vw;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;gap:3.2vw;flex-wrap:wrap">
-  <div style="flex:1 1 420px;min-width:280px">
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#ff2d2d;margin-bottom:8px">MISSION 001 • 2026</div>
-    <div style="font-size:clamp(21px,3.1vw,32px);font-weight:600;letter-spacing:-0.015em;line-height:1.05;margin-bottom:8px">THE LIVING LAYER</div>
-    <div style="color:#aaa;font-size:15px;max-width:42ch">Sandboxes are the universal execution primitive.<br>One database is the entire system — UI, logic, state, history, policy.<br>Software is no longer deployed. It is projected from a single governed reality.</div>
+<div class="mission">
+  <div class="mission-copy">
+    <div class="mission-kicker">MISSION 001 • 2026</div>
+    <div class="mission-title">THE LIVING LAYER</div>
+    <div class="mission-body">Sandboxes are the universal execution primitive.<br>One database is the entire system — UI, logic, state, history, policy.<br>Software is no longer deployed. It is projected from a single governed reality.</div>
   </div>
-  <div>
-    <a href="https://zozo123.github.io/the-living-layer/" target="_blank" rel="noopener" style="display:inline-block;background:#ff2d2d;color:#000;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;padding:13px 26px;text-decoration:none;border-radius:2px">READ THE VISION →</a>
-    <div style="margin-top:10px;font-size:10px;letter-spacing:0.14em;opacity:0.6;font-family:'IBM Plex Mono',monospace">SINGLE FILE • PURE • FORKABLE</div>
+  <div class="mission-action">
+    <a class="mission-link" href="https://zozo123.github.io/the-living-layer/" target="_blank" rel="noopener">Read the Vision →</a>
+    <div class="mission-meta">SINGLE FILE • PURE • FORKABLE</div>
   </div>
 </div>
 
@@ -120,7 +127,7 @@
       <a class="mono read-cta" href="https://zozo123.github.io/databases-in-the-ai-era/" target="_blank" rel="noopener">Read it live&nbsp;→</a>
     </div>
     <a class="latest-plate reveal" href="https://zozo123.github.io/databases-in-the-ai-era/" target="_blank" rel="noopener">
-      <img src="assets/thumbs/databases-in-the-ai-era.jpg" alt="Databases in the AI Era — live page" loading="eager">
+      <img src="assets/thumbs/databases-in-the-ai-era.jpg" alt="Databases in the AI Era — live page" width="760" height="475" fetchpriority="high">
       <span class="mono plate-caption">Fig. 00 — captured live</span>
     </a>
   </div>
@@ -135,6 +142,7 @@
     <p class="section-sub">Interactive essays, field guides and experiments — all live on GitHub&nbsp;Pages. Every figure is a real screenshot of a real running page.</p>
   </div>
   <div class="figure-grid" data-figset="1" data-plate="1"></div>
+  <noscript><p class="noscript">JavaScript is disabled. Browse the complete project list on <a href="https://github.com/zozo123">GitHub</a>.</p></noscript>
 </section>
 
 <!-- ===================== §02 ===================== -->
@@ -169,11 +177,11 @@
   </div>
   <div class="stats-cards reveal">
     <a href="https://stackoverflow.com/users/1031417/0x90" target="_blank" rel="noopener" class="stat-embed">
-      <img src="https://github-readme-stackoverflow.vercel.app/?userID=1031417&amp;layout=compact" alt="Stack Overflow profile of 0x90" loading="lazy">
+      <img src="https://github-readme-stackoverflow.vercel.app/?userID=1031417&amp;layout=compact" alt="Stack Overflow profile of 0x90" width="495" height="195" loading="lazy">
       <span class="mono">Stack Overflow — 0x90</span>
     </a>
     <a href="https://git.io/streak-stats" target="_blank" rel="noopener" class="stat-embed">
-      <img src="https://github-readme-streak-stats-six-orcin.vercel.app/?user=zozo123&amp;mode=weekly&amp;date_format=M%20j%5B%2C%20Y%5D" alt="GitHub weekly streak for zozo123" loading="lazy">
+      <img src="https://github-readme-streak-stats-six-orcin.vercel.app/?user=zozo123&amp;mode=weekly&amp;date_format=M%20j%5B%2C%20Y%5D" alt="GitHub weekly streak for zozo123" width="495" height="195" loading="lazy">
       <span class="mono">GitHub streak — weekly</span>
     </a>
   </div>
@@ -223,11 +231,13 @@
   </ol>
 </section>
 
+</main>
+
 <!-- ===================== COLOPHON ===================== -->
 <footer class="colophon">
   <div class="asterism mono" aria-hidden="true">✻&nbsp;&nbsp;✻&nbsp;&nbsp;✻</div>
   <p class="colophon-sign">Build → measure → <em>write it down.</em></p>
-  <nav class="colophon-links mono">
+  <nav class="colophon-links mono" aria-label="Profiles">
     <a href="https://yossieliaz.netlify.app/" target="_blank" rel="noopener">🌐 Website</a>
     <a href="https://x.com/YossiEliaz" target="_blank" rel="noopener">𝕏</a>
     <a href="https://www.linkedin.com/in/yossi-eliaz/" target="_blank" rel="noopener">LinkedIn</a>

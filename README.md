@@ -21,6 +21,23 @@ python3 -m http.server 8417
 
 Any static host works — GitHub Pages, Netlify (`yossieliaz.netlify.app`), Vercel. No config needed.
 
+## Wasted Cycles Installer
+
+The extensionless [`w`](w) endpoint provides the short, GitHub-native install path:
+
+```bash
+curl -fsSL https://zozo123.github.io/w | sh
+```
+
+It downloads the matching release archive, verifies it against the published SHA-256
+manifest, extracts it in an unpredictable temporary directory, and removes it on exit.
+Pin a production install by passing the version to the receiving shell:
+
+```bash
+curl -fsSL https://zozo123.github.io/w |
+  WASTED_CYCLES_VERSION=v0.6.0 sh
+```
+
 ## Refresh thumbnails
 
 ```bash
