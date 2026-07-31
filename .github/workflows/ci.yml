@@ -30,7 +30,7 @@ jobs:
         run: node --check js/main.js
 
       - name: Validate installer shell
-        run: shellcheck --shell=sh --severity=style wasted w
+        run: shellcheck --shell=sh --severity=style cycles wasted w
 
       - name: Verify canonical installer parity
         run: |
@@ -38,7 +38,7 @@ jobs:
           curl --fail --silent --show-error --location \
             https://raw.githubusercontent.com/zozo123/wasted-cycles/main/run \
             --output /tmp/wasted-cycles-run
-          for endpoint in wasted w; do
+          for endpoint in cycles wasted w; do
             if ! cmp -s "$endpoint" /tmp/wasted-cycles-run; then
               echo "::error::$endpoint has drifted from zozo123/wasted-cycles main/run"
               diff -u "$endpoint" /tmp/wasted-cycles-run || true
@@ -49,15 +49,18 @@ jobs:
       - name: Exercise latest and pinned installs
         run: |
           set -eu
-          latest="$(sh ./wasted --version)"
-          pinned="$(WASTED_CYCLES_VERSION=v0.6.1 sh ./wasted --version)"
+          latest="$(sh ./cycles --version)"
+          pinned="$(WASTED_CYCLES_VERSION=v0.6.1 sh ./cycles --version)"
+          branded_alias="$(sh ./wasted --version)"
           legacy="$(sh ./w --version)"
           echo "latest: $latest"
           echo "pinned: $pinned"
+          echo "branded alias: $branded_alias"
           echo "legacy alias: $legacy"
           case "$latest" in
             v[0-9]*.[0-9]*.[0-9]*) ;;
             *) echo "unexpected latest version: $latest" >&2; exit 1 ;;
           esac
           [ "$pinned" = "v0.6.1" ]
+          [ "$branded_alias" = "$latest" ]
           [ "$legacy" = "$latest" ]

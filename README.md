@@ -23,10 +23,10 @@ Any static host works — GitHub Pages, Netlify (`yossieliaz.netlify.app`), Verc
 
 ## Wasted Cycles Installer
 
-The extensionless [`wasted`](wasted) endpoint provides the memorable, GitHub-native install path:
+The extensionless [`cycles`](cycles) endpoint provides the memorable, GitHub-native run path:
 
 ```bash
-curl -fsSL https://zozo123.github.io/wasted | sh
+curl -fsSL https://zozo123.github.io/cycles | sh
 ```
 
 It downloads the matching release archive, verifies it against the published SHA-256
@@ -34,11 +34,11 @@ manifest, extracts it in an unpredictable temporary directory, and removes it on
 Pin a production install by passing the version to the receiving shell:
 
 ```bash
-curl -fsSL https://zozo123.github.io/wasted |
+curl -fsSL https://zozo123.github.io/cycles |
   WASTED_CYCLES_VERSION=v0.6.1 sh
 ```
 
-The original [`w`](w) path remains a compatibility alias.
+The earlier [`wasted`](wasted) and [`w`](w) paths remain compatibility aliases.
 
 ## Refresh thumbnails
 
