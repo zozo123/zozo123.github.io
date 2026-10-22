@@ -30,7 +30,9 @@ jobs:
           package-manager-cache: false
 
       - name: Validate homepage HTML
-        run: npx --yes html-validate@11.6.0 index.html
+        run: |
+          npm install --prefix "$RUNNER_TEMP/html-validation" --no-save --ignore-scripts html-validate@11.6.0
+          "$RUNNER_TEMP/html-validation/node_modules/.bin/html-validate" index.html
 
       - name: Validate browser JavaScript
         run: node --check js/main.js
