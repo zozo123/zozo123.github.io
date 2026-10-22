@@ -6,11 +6,19 @@ genomics, and physics.
 - Live writing site: https://zozo123.github.io/
 - Professional profile and CV: https://yossieliaz.netlify.app/
 
-This is a static site with no build step: `index.html`, `css/`, `js/`, and `assets/`.
-The selected work and reading links are plain HTML and work without JavaScript. The expandable
-archive is generated from `FIGSETS` in `js/main.js`; edit that data to add or reorder posts.
-Typography: Fraunces, Spectral, and IBM Plex Mono. The share card is `assets/og/card.svg`, rendered
-to `card.png` at 1200×630 (`rsvg-convert -w 1200 -h 630 assets/og/card.svg -o assets/og/card.png`).
+This is a static site: `index.html`, `css/`, `js/`, and `assets/`. Every card on the homepage
+comes from [`data/works.json`](data/works.json); `tools/build_index.py` renders it into static
+`index.html` (readable without JavaScript, by crawlers, and by answer engines), plus `sitemap.xml`,
+`llms.txt`, and `robots.txt`. Edit the JSON, then run:
+
+```bash
+python3 tools/build_index.py
+```
+
+CI fails if the committed `index.html` does not match the data. `js/main.js` only adds motion and
+replaces the repo, year, and follower counts with live GitHub API values. Typography: Fraunces,
+Spectral, and IBM Plex Mono. Share cards are SVG sources in `assets/og/` rendered to PNG at
+1200×630 (`rsvg-convert -w 1200 -h 630 assets/og/card.svg -o assets/og/card.png`).
 
 ## Preview
 
@@ -51,6 +59,8 @@ curl -fsSL https://zozo123.github.io/cycles |
 The earlier [`wasted`](wasted) and [`w`](w) paths remain compatibility aliases.
 
 ## Refresh thumbnails
+
+Thumbnails live in `assets/thumbs/<repo>.jpg` (cards with an `image` in the JSON use that instead).
 
 ```bash
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \

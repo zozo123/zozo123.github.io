@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f6f1e6"/>
+  <rect width="1200" height="8" fill="#97290f"/>
+  <text x="80" y="118" font-family="Menlo, monospace" font-size="22" fill="#97290f" letter-spacing="3">RUST · v0.4.0 · APACHE-2.0</text>
+  <text x="76" y="218" font-family="Georgia, serif" font-size="104" fill="#191510">ForgeFS</text>
+  <text x="80" y="272" font-family="Georgia, serif" font-size="32" fill="#4a4237">Isolated, auditable workspaces for concurrent coding agents.</text>
+  <rect x="80" y="316" width="1040" height="236" fill="#191510"/>
+  <text font-family="Menlo, monospace" font-size="22" fill="#f6f1e6">
+    <tspan x="112" y="364"><tspan fill="#b8892c">$</tspan> forge checkin --ns "$A" -m alice   <tspan fill="#8d8372"># updates work</tspan></tspan>
+    <tspan x="112" y="410"><tspan fill="#b8892c">$</tspan> forge checkin --ns "$B" -m bob     <tspan fill="#9fd18b"># forked, work kept · exit 0</tspan></tspan>
+    <tspan x="112" y="456"><tspan fill="#b8892c">$</tspan> forge checkin --ns "$C" -m carol   <tspan fill="#ff806f"># stale read refused · exit 4</tspan></tspan>
+    <tspan x="112" y="502"><tspan fill="#b8892c">$</tspan> forge fsck --full                  <tspan fill="#9fd18b"># ok</tspan></tspan>
+  </text>
+  <text x="80" y="596" font-family="Menlo, monospace" font-size="20" fill="#4a4237">Yossi Eliaz · github.com/zozo123/forgefs</text>
+</svg>

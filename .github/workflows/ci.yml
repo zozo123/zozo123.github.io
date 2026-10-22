@@ -30,6 +30,11 @@ jobs:
           node-version: "24"
           package-manager-cache: false
 
+      - name: Check the homepage matches data/works.json
+        run: |
+          python3 tools/build_index.py
+          git diff --exit-code -- index.html sitemap.xml llms.txt robots.txt
+
       - name: Validate homepage HTML
         run: npx --yes html-validate@11.6.0 index.html
 

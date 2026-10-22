@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zozo123.github.io/sitemap.xml
