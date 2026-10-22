@@ -1,4 +1,4 @@
-/* ============ data: every live page, same content as the GitHub profile ============ */
+/* Writing archive. Selected work and reading remain available without JavaScript. */
 const FIGSETS = {
   1: [ // §01 AI Agents & Sandboxes
     { slug: "wasted-cycles", url: "https://zozo123.github.io/wasted-cycles/",
@@ -24,7 +24,7 @@ const FIGSETS = {
     { slug: "longmem-mini-on-islo", url: "https://zozo123.github.io/longmem-mini-on-islo/",
       title: "Tiny Long-Memory Benchmark", tldr: "LongMemEval-style memory benchmark fanned across sandboxes." },
     { slug: "meta-harness-on-islo-page", url: "https://zozo123.github.io/meta-harness-on-islo-page/",
-      title: "Meta-harness on Islo", tldr: "A harness that builds harnesses (POC) — 0/5→5/5 in four proposer steps." },
+      title: "Meta-harness on Islo", tldr: "A deterministic simulation of harness optimization: scripted agent, pattern-matching proposer, five toy tasks." },
     { slug: "env-rosetta-page", url: "https://zozo123.github.io/env-rosetta-page/",
       title: "env-rosetta", tldr: "Same Wordle env, 4 RL frameworks, 4 sandboxes." },
     { slug: "pokeloop", url: "https://zozo123.github.io/pokeloop/",
@@ -36,7 +36,11 @@ const FIGSETS = {
     { slug: "gha-cache-field-guide", url: "https://zozo123.github.io/gha-cache-field-guide/",
       title: "CI Caching Is Not One Cache", tldr: "A field guide to GitHub Actions cache strategy." },
   ],
-  2: [ // §02 Deep Dives & Essays
+  2: [ // Essays and architecture ideas
+    { slug: "databases-in-the-ai-era", url: "https://zozo123.github.io/databases-in-the-ai-era/",
+      title: "Databases in the AI Era", tldr: "An essay on database systems built for agent workloads." },
+    { slug: "the-living-layer", url: "https://zozo123.github.io/the-living-layer/",
+      title: "The Living Layer", tldr: "A speculative architecture thesis, with prototypes and upstream tools identified separately.", noImage: true },
     { slug: "how-stackoverflow-taught-ai", url: "https://zozo123.github.io/how-stackoverflow-taught-ai/",
       title: "The Data That Taught the Machines", tldr: "How Stack Overflow trained its own replacement." },
     { slug: "loop-coming-apart", url: "https://zozo123.github.io/loop-coming-apart/",
@@ -54,101 +58,29 @@ const FIGSETS = {
   ],
 };
 
-/* ============ render figure cards ============ */
-let figNo = 0;
-
-function thumbHTML(p) {
-  const src = p.image || `assets/thumbs/${p.slug}.jpg`;
-  return `
-    <span class="figure-thumb">
-      <img src="${src}" alt="${p.title} — live page screenshot" width="760" height="475" loading="lazy">
-    </span>`;
-}
-function captionHTML(n) {
-  return `
-    <span class="fig-caption">
-      <span class="fc-no">Fig. ${n}</span>
-      <span class="fc-live">● live page</span>
-    </span>`;
-}
-function bodyHTML(p) {
-  return `
-    <span class="figure-body">
-      <span class="figure-title">${p.title}</span>
-      <span class="figure-tldr">${p.tldr}</span>
-      <span class="mono figure-link">View live →</span>
-    </span>`;
-}
-
+/* Render the archive from trusted, checked-in data. */
 document.querySelectorAll(".figure-grid").forEach((grid) => {
-  const set = FIGSETS[grid.dataset.figset] || [];
-  const usePlate = grid.dataset.plate === "1";
-  grid.innerHTML = set.map((p, i) => {
-    figNo += 1;
-    const n = String(figNo).padStart(2, "0");
-    const closingPlate = i === set.length - 1 && (set.length - 2) % 3 === 0;
-    if (usePlate && (i === 0 || closingPlate)) {
-      return `
-        <a class="figure-card plate${closingPlate ? " plate-flip" : ""} reveal" href="${p.url}" target="_blank" rel="noopener">
-          ${thumbHTML(p)}
-          <span class="fig-side">${captionHTML(n)}${bodyHTML(p)}</span>
-        </a>`;
-    }
-    return `
-      <a class="figure-card reveal" href="${p.url}" target="_blank" rel="noopener">
-        ${thumbHTML(p)}${captionHTML(n)}${bodyHTML(p)}
-      </a>`;
-  }).join("");
-  grid.querySelectorAll(".figure-thumb img").forEach((image) => {
-    image.addEventListener("error", () => image.parentNode.classList.add("thumb-missing"));
+  const projects = FIGSETS[grid.dataset.figset] || [];
+  grid.innerHTML = projects.map((project) => `
+    <a class="figure-card" href="${project.url}">
+      ${project.noImage ? "" : `<span class="figure-thumb"><img src="${project.image || `assets/thumbs/${project.slug}.jpg`}" alt="" width="760" height="475" loading="lazy"></span>`}
+      <span class="figure-body">
+        <span class="figure-title">${project.title}</span>
+        <span class="figure-tldr">${project.tldr}</span>
+        <span class="figure-link">Read experiment</span>
+      </span>
+    </a>`).join("");
+  grid.querySelectorAll("img").forEach((image) => {
+    const hideMissingThumbnail = () => image.parentElement.classList.add("thumb-missing");
+    image.addEventListener("error", hideMissingThumbnail);
+    if (image.complete && !image.naturalWidth) hideMissingThumbnail();
   });
 });
 
-/* ============ masthead date ============ */
-const d = new Date();
-document.getElementById("today-date").textContent =
-  d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }).toUpperCase();
-
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-/* ============ hero load-in ============ */
-if (reduceMotion) {
-  document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
-} else {
-  requestAnimationFrame(() => {
-    document.querySelectorAll(".in-load").forEach((el) => el.classList.add("in"));
-  });
+/* Preserve direct links into collapsed archive sections. */
+function openLinkedArchive() {
+  const target = document.getElementById(location.hash.slice(1));
+  if (target instanceof HTMLDetailsElement) target.open = true;
 }
-
-/* ============ scroll reveal ============ */
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-  });
-}, { threshold: 0.08, rootMargin: "0px 0px -4% 0px" });
-if (!reduceMotion) {
-  document.querySelectorAll(".reveal:not(.in-load)").forEach((el) => io.observe(el));
-}
-
-/* ============ hero counters ============ */
-const counterIO = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (!e.isIntersecting) return;
-    counterIO.unobserve(e.target);
-    const target = +e.target.dataset.count;
-    const t0 = performance.now(), dur = 1100;
-    const tick = (t) => {
-      const k = Math.min((t - t0) / dur, 1);
-      e.target.textContent = Math.round(target * (1 - Math.pow(1 - k, 3)));
-      if (k < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll(".stat-n").forEach((el) => {
-  if (reduceMotion) {
-    el.textContent = el.dataset.count;
-  } else {
-    counterIO.observe(el);
-  }
-});
+openLinkedArchive();
+window.addEventListener("hashchange", openLinkedArchive);
