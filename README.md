@@ -1,25 +1,35 @@
-# yossi eliaz — a living preprint
+# Yossi Eliaz — Writing & experiments
 
-Personal website for [Yossi Eliaz](https://github.com/zozo123), carrying the full content of the
-GitHub profile README — every live essay, demo, stat and planner — styled as an annotated
-scientific preprint.
+Selected engineering work, practical field guides, and reproducible experiments on AI agents,
+sandboxes, CI, and scientific computing.
 
-- **Type**: static site, no build step (`index.html` + `css/` + `js/` + `assets/`)
-- **Typography**: Fraunces · Spectral · IBM Plex Mono (Google Fonts)
-- **Thumbnails**: real screenshots of each live GitHub Pages site, captured with headless Chrome
-  (`assets/thumbs/*.jpg`, 760px wide, ~50KB each)
-- **Cards data**: edit `js/main.js` (`FIGSETS`) to add or reorder posts
+- Live writing site: https://zozo123.github.io/
+- Professional profile and CV: https://yossieliaz.netlify.app/
+- Professional-site source: https://github.com/zozo123/yossieliaz
+
+This is a static site with no build step: `index.html`, `css/`, `js/`, and `assets/`.
+The selected work and reading links are plain HTML and work without JavaScript. The expandable
+archive is generated from `FIGSETS` in `js/main.js`; edit that data to add or reorder posts.
+The existing paper-and-ink typography uses Fraunces, Spectral, and IBM Plex Mono.
 
 ## Preview
 
 ```bash
 python3 -m http.server 8417
-# → http://localhost:8417/
+# open http://localhost:8417/
+```
+
+## Validate
+
+```bash
+npx --yes html-validate@11.6.0 index.html
+node --check js/main.js
 ```
 
 ## Deploy
 
-Any static host works — GitHub Pages, Netlify (`yossieliaz.netlify.app`), Vercel. No config needed.
+GitHub Pages publishes the root of the `master` branch. The separate Netlify professional site
+is built from the [yossieliaz repository](https://github.com/zozo123/yossieliaz).
 
 ## Wasted Cycles Installer
 
