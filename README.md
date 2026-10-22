@@ -1,16 +1,16 @@
 # Yossi Eliaz — Writing & experiments
 
-Selected engineering work, practical field guides, and reproducible experiments on AI agents,
-sandboxes, CI, and scientific computing.
+Notes, measurements, and experiments from building difficult systems: AI agent sandboxes, CI,
+genomics, and physics.
 
 - Live writing site: https://zozo123.github.io/
 - Professional profile and CV: https://yossieliaz.netlify.app/
-- Professional-site source: https://github.com/zozo123/yossieliaz
 
 This is a static site with no build step: `index.html`, `css/`, `js/`, and `assets/`.
 The selected work and reading links are plain HTML and work without JavaScript. The expandable
 archive is generated from `FIGSETS` in `js/main.js`; edit that data to add or reorder posts.
-The existing paper-and-ink typography uses Fraunces, Spectral, and IBM Plex Mono.
+Typography: Fraunces, Spectral, and IBM Plex Mono. The share card is `assets/og/card.svg`, rendered
+to `card.png` at 1200×630 (`rsvg-convert -w 1200 -h 630 assets/og/card.svg -o assets/og/card.png`).
 
 ## Preview
 
@@ -29,7 +29,7 @@ node --check js/main.js
 ## Deploy
 
 GitHub Pages publishes the root of the `master` branch. The separate Netlify professional site
-is built from the [yossieliaz repository](https://github.com/zozo123/yossieliaz).
+is built from a private repository.
 
 ## Wasted Cycles Installer
 

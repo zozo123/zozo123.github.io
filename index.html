@@ -6,17 +6,21 @@
 <meta name="theme-color" content="#f6f1e6">
 <meta name="color-scheme" content="light">
 <title>Yossi Eliaz — Writing &amp; experiments</title>
-<meta name="description" content="Writing and reproducible experiments on AI agents, sandboxes, CI, and scientific computing by Yossi Eliaz, Principal Engineer in AI Systems.">
+<meta name="description" content="Writing and experiments on AI agent sandboxes, CI, genomics, and scientific computing by Yossi Eliaz, Principal Engineer, Applied Scientist, and Lecturer.">
 <meta property="og:title" content="Yossi Eliaz — Writing &amp; experiments">
-<meta property="og:description" content="Selected engineering work, practical field guides, and reproducible experiments on AI execution infrastructure.">
-<meta property="og:image" content="https://zozo123.github.io/assets/og/preview.jpg">
+<meta property="og:description" content="Notes, measurements, and experiments from building difficult systems: agent sandboxes, CI, genomics, and physics.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://zozo123.github.io/assets/og/card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Yossi Eliaz, Writing &amp; experiments">
 <meta property="og:url" content="https://zozo123.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://zozo123.github.io/">
-<link rel="icon" href="https://avatars.githubusercontent.com/u/553010?v=4">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&amp;family=Spectral:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&amp;family=Spectral:wght@400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -35,9 +39,9 @@
 <main id="main">
   <section class="hero" aria-labelledby="page-title">
     <h1 id="page-title">Writing &amp; experiments</h1>
-    <p class="hero-lead">I build reliable execution infrastructure for AI agents.</p>
-    <p class="hero-context">Principal Engineer, AI Systems. PhD in Physics. Lecturer.<br>
-      Here are the tools, measurements, and field guides behind the work.</p>
+    <p class="hero-lead">Notes, measurements, and experiments from building difficult systems.</p>
+    <p class="hero-context">Principal Engineer · Applied Scientist · Lecturer. AI execution infrastructure today;
+      genomics, autonomous-driving perception, and physics before. PhD in Physics.</p>
     <p class="hero-links"><a href="https://github.com/zozo123">GitHub</a>
       <a href="https://yossieliaz.netlify.app/research/">Research</a>
       <a href="mailto:eliaz123@gmail.com">Email</a></p>
@@ -48,49 +52,54 @@
       <article class="work-item">
         <div><h3><a href="https://github.com/zozo123/forgefs">ForgeFS</a></h3>
           <p>Isolated, auditable workspaces for concurrent coding agents, built in Rust.</p></div>
-        <div class="work-detail"><p>Immutable snapshots, explicit publication conflicts, and verifiable releases. A single-machine system with documented costs and limits.</p>
-          <a href="https://github.com/zozo123/forgefs#readme">Code, quickstart &amp; limits</a></div>
+        <div class="work-detail"><p>When two agents publish over each other, the second one's work survives as a fork. Immutable snapshots, verifiable releases, and documented limits.</p>
+          <a href="https://github.com/zozo123/forgefs#try-it">Try it</a>
+          <a href="https://github.com/zozo123/forgefs">Code &amp; limits</a></div>
       </article>
       <article class="work-item">
         <div><h3><a href="https://github.com/zozo123/ariflow-swfactory">SWFactory</a></h3>
-          <p>Airflow workflows for coding agents, verification, and pull request delivery.</p></div>
+          <p>GitHub issues to reviewed pull requests with coding agents, Airflow, and human approval gates.</p></div>
         <div class="work-detail"><p>Alpha. The local replay uses authored fixtures; live agent execution requires a configured deployment.</p>
           <a href="https://github.com/zozo123/ariflow-swfactory#quickstart">Code &amp; quickstart</a>
           <a href="https://zozo123.github.io/ariflow-swfactory/">Walkthrough</a></div>
       </article>
       <article class="work-item">
         <div><h3><a href="https://zozo123.github.io/t2t-vs-grch38/">What T2T changed</a></h3>
-          <p>A reproducible comparison of human genome references, run through a sandbox harness.</p></div>
-        <div class="work-detail"><p>GRCh38 versus T2T-CHM13, measured with a transparent sequence-composition caller. Candidate CpG islands, with the method and caveats published.</p>
-          <a href="https://zozo123.github.io/t2t-vs-grch38/">Results &amp; caveats</a>
+          <p>GRCh38 versus the telomere-to-telomere T2T-CHM13 human reference, chromosome by chromosome, computed as 24 sandbox shards.</p></div>
+        <div class="work-detail"><p>179.6 Mb of added usable sequence, and where 200-bp windows passing a CpG-composition rule fall. Composition only, not annotated CpG islands; caveats published.</p>
+          <a href="https://zozo123.github.io/t2t-vs-grch38/#limits">Results &amp; caveats</a>
           <a href="https://github.com/zozo123/t2t-vs-grch38">Code</a></div>
       </article>
     </div>
   </section>
   <section class="section" id="reading" aria-labelledby="reading-title">
-    <div class="section-head"><h2 id="reading-title">Start reading</h2></div>
+    <div class="section-head"><h2 id="reading-title">Selected writing</h2></div>
     <ul class="reading-list">
       <li><h3><a href="https://zozo123.github.io/sandboxes-why-how-when/">The Sandbox Shift</a></h3>
         <p>When isolated execution helps agent systems, and how to choose an approach.</p></li>
       <li><h3><a href="https://zozo123.github.io/gha-cache-field-guide/">CI Caching Is Not One Cache</a></h3>
         <p>A practical field guide to GitHub Actions cache strategy.</p></li>
+      <li><h3><a href="https://arxiv.org/abs/2607.09689">Evidence-Aware MapReduce for Forkable Compute</a></h3>
+        <p>Counting forked agent branches without mistaking a repeated error for consensus. Preprint, 2026.</p></li>
     </ul>
   </section>
   <section class="section archive" id="archive" aria-labelledby="archive-title">
     <div class="section-head"><h2 id="archive-title">More writing &amp; experiments</h2>
-      <p>Prototypes, interactive explanations, and longer essays. Each project documents its own scope.</p></div>
+      <p>Prototypes, interactive explanations, and longer essays.</p></div>
     <details id="writing">
       <summary>AI agents &amp; sandboxes</summary>
       <div class="figure-grid" data-figset="1"></div>
       <noscript><ul><li><a href="https://zozo123.github.io/wasted-cycles/">Wasted Cycles</a></li>
         <li><a href="https://zozo123.github.io/sandbox-landscape/">AI Sandbox Landscape</a></li>
-        <li><a href="https://zozo123.github.io/meta-harness-on-islo-page/">Meta-harness: a deterministic simulation</a></li></ul></noscript>
+        <li><a href="https://zozo123.github.io/meta-harness-on-islo-page/">Meta-harness: a deterministic simulation</a></li>
+        <li><a href="https://github.com/zozo123?tab=repositories">All projects on GitHub</a></li></ul></noscript>
     </details>
     <details id="essays">
       <summary>Essays &amp; architecture ideas</summary>
       <div class="figure-grid" data-figset="2"></div>
       <noscript><ul><li><a href="https://zozo123.github.io/databases-in-the-ai-era/">Databases in the AI Era</a></li>
-        <li><a href="https://zozo123.github.io/the-living-layer/">The Living Layer: an architecture thesis</a></li></ul></noscript>
+        <li><a href="https://zozo123.github.io/the-living-layer/">The Living Layer: an architecture thesis</a></li>
+        <li><a href="https://github.com/zozo123?tab=repositories">All projects on GitHub</a></li></ul></noscript>
     </details>
     <details id="quant">
       <summary>Market microstructure</summary>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f6f1e6"/>
+  <rect width="1200" height="8" fill="#97290f"/>
+  <text x="96" y="118" font-family="Menlo, monospace" font-size="24" fill="#191510">Yossi Eliaz</text>
+  <text x="1104" y="118" text-anchor="end" font-family="Menlo, monospace" font-size="20" fill="#4a4237">zozo123.github.io</text>
+  <line x1="96" y1="146" x2="1104" y2="146" stroke="#d9cdb5" stroke-width="2"/>
+  <text x="92" y="276" font-family="Georgia, serif" font-size="96" fill="#191510">Writing &amp; experiments</text>
+  <text x="96" y="352" font-family="Georgia, serif" font-size="34" fill="#191510">Notes, measurements, and experiments from building</text>
+  <text x="96" y="398" font-family="Georgia, serif" font-size="34" fill="#191510">difficult systems.</text>
+  <line x1="96" y1="456" x2="1104" y2="456" stroke="#191510" stroke-width="2"/>
+  <text x="96" y="508" font-family="Menlo, monospace" font-size="21" fill="#97290f">AGENT SANDBOXES · CI · GENOMICS · PHYSICS</text>
+  <text x="96" y="552" font-family="Georgia, serif" font-size="24" fill="#4a4237">Principal Engineer · Applied Scientist · Lecturer</text>
+</svg>
