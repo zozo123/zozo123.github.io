@@ -61,6 +61,8 @@ The earlier [`wasted`](wasted) and [`w`](w) paths remain compatibility aliases.
 ## Refresh thumbnails
 
 Thumbnails live in `assets/thumbs/<repo>.jpg` (cards with an `image` in the JSON use that instead).
+Prefer the page's own 1200×630 share card as the `image`: it stays current with the page, and cards
+show thumbnails at that shape. A capture is cropped to its top.
 
 ```bash
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \

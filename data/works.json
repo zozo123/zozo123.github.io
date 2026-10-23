@@ -18,7 +18,7 @@
       "title": "SWFactory",
       "tldr": "GitHub issues to reviewed pull requests with coding agents, Airflow, and human approval gates. The local replay needs no keys.",
       "link": "Walkthrough →",
-      "link_url": "https://zozo123.github.io/ariflow-swfactory/"
+      "link_url": "https://zozo123.github.io/ariflow-swfactory/#factory-demo"
     },
     {
       "slug": "t2t-vs-grch38",
@@ -35,8 +35,8 @@
     "slug": "databases-in-the-ai-era",
     "url": "https://zozo123.github.io/databases-in-the-ai-era/",
     "kicker": "✦ Featured essay · Jun 2026",
-    "title_html": "<em>Databases</em> in the AI&nbsp;Era",
-    "title": "Databases in the AI Era",
+    "title_html": "<em>Databases</em> in the Age of&nbsp;AI",
+    "title": "Databases in the Age of AI",
     "tldr": "What fifty years of database systems must become when the dominant reader of data is no longer human."
   },
   "sections": [
@@ -49,26 +49,26 @@
       "plate": true,
       "items": [
         {"slug": "sandboxes-why-how-when", "title": "The Sandbox Shift", "tldr": "When isolated execution helps agent systems, and how to choose an approach, with an interactive decider."},
-        {"slug": "gha-cache-field-guide", "title": "CI Caching Is Not One Cache", "tldr": "A practical field guide to GitHub Actions cache strategy."},
+        {"slug": "gha-cache-field-guide", "image": "https://zozo123.github.io/gha-cache-field-guide/og.png", "title": "CI Caching Is Not One Cache", "tldr": "A June 2026 POC: when native caches, BuildKit, or Incredibuild Build Cache help GitHub Actions on fresh, warm, or touched runners, with POC timings (not a controlled benchmark)."},
         {"slug": "wasted-cycles", "image": "https://zozo123.github.io/wasted-cycles/og.png", "title": "Wasted Cycles", "tldr": "Find the machine time blocking agent work: local traces and GitHub Actions latency, with a one-line installer."},
-        {"slug": "hermetic-agents-demo", "title": "Hermetic Agents", "tldr": "Code and tests from one spec with no shared scratchpad: separate coder and tester contexts, and QA that assigns blame when they disagree."},
+        {"slug": "hermetic-agents-demo", "image": "https://zozo123.github.io/hermetic-agents-demo/og.png", "title": "Hermetic Agents", "tldr": "Deterministic demo: scripted code and test writers get the same spec but disjoint inputs; a QA arbiter with a hidden oracle blames the seeded wrong test. No language model is called."},
         {"slug": "bazel-monty", "image": "https://zozo123.github.io/bazel-monty/og-image.png", "title": "Bazel 9 × monty", "tldr": "Building pydantic/monty with Bazel 9 and a remote cache: 121 s cold, 15.7 s fully cached."},
         {"slug": "sandbox-landscape", "title": "AI Sandbox Landscape", "tldr": "A map of the execution-sandbox ecosystem."},
         {"slug": "sol-exec-bench", "image": "https://zozo123.github.io/sol-exec-bench/og.png", "title": "One Lab Per Kernel", "tldr": "A technical design for running a GPU-kernel research loop (SOL-ExecBench) reproducibly on Islo sandboxes."},
-        {"slug": "rust-it-up", "image": "https://zozo123.github.io/rust-it-up/og-v2.png", "title": "Rust It Up", "tldr": "Should this repo be rewritten in Rust? An evidence-based migration score."},
-        {"slug": "inferoa-demo", "title": "Inferoa", "tldr": "Inference-native agent mechanics: prefix caching, context compression, and routing."},
-        {"slug": "agentic-airbyte", "title": "Agentic Airbyte", "tldr": "Design for agent-driven ETL, plus one verified run: 50,000 rows from ClickHouse to DuckDB in an islo.dev sandbox."},
-        {"slug": "demo-evals-pydantic-islo-crabbox", "title": "Evals or You're Blind", "tldr": "Pydantic AI and Pydantic Evals on disposable sandboxes."},
-        {"slug": "repo2rlenv-crabbox-demo", "title": "Repo2RLEnv × Crabbox", "tldr": "Demo record: scoring Repo2RLEnv pr_diff tasks on an islo.dev sandbox via crabbox, about 50 s per task."},
-        {"slug": "odysseus-crabbox-demo", "title": "Odysseus × Crabbox", "tldr": "A self-hosted AI workspace on a throwaway microVM, in one command."},
-        {"slug": "longmem-mini-on-islo", "title": "Tiny Long-Memory Benchmark (toy demo)", "tldr": "A LongMemEval-style toy benchmark fanned out across sandboxes."},
-        {"slug": "meta-harness-on-islo-page", "title": "Meta-harness on Islo", "tldr": "A deterministic simulation of harness optimization: scripted agent, pattern-matching proposer, five toy tasks."},
-        {"slug": "env-rosetta-page", "title": "env-rosetta", "tldr": "The same Wordle environment across four RL frameworks and four sandboxes."},
-        {"slug": "rust-rover-plugin-crabbox", "title": "Crabbox Runner for RustRover", "tldr": "Run Rust commands in OpenClaw Crabbox sandboxes from the IDE."},
-        {"slug": "gemma-to-jev", "title": "Gemma System One", "tldr": "Gemma 3 4B as a one-forward-pass decision function in native Rust, with shared-state inference across many questions."},
-        {"slug": "pokeloop", "title": "Pokeloop", "tldr": "A genetic algorithm over LLM policies learning Pokémon GO."},
-        {"slug": "unity-loop-page", "title": "unity-loop", "tldr": "Unity scenes built by agents on remote sandboxes, judged by a vision-model tournament."},
-        {"slug": "wolfram-fb0", "title": "wolfram-fb0", "tldr": "Can a 1B local model write x86-64 assembly for Rule 30 inside a VM? First 3 iterations: not yet."}
+        {"slug": "rust-it-up", "image": "https://zozo123.github.io/rust-it-up/og-v2.png", "title": "Rust It Up", "tldr": "Prototype: paste a public GitHub repo to get an illustrative Rust-migration scorecard. The scanner is mocked; estimates are not audited."},
+        {"slug": "inferoa-demo", "image": "https://zozo123.github.io/inferoa-demo/og.png", "title": "Inferoa Flight Recorder (unofficial demo)", "tldr": "Unofficial demo of agentic-in/inferoa: a client-side simulation of prefix caching, context compression, and routing, plus receipts from real vLLM runs in islo.dev sandboxes."},
+        {"slug": "agentic-airbyte", "image": "https://zozo123.github.io/agentic-airbyte/og.png", "title": "Agentic Airbyte", "tldr": "Design for agent-driven ETL, plus one verified run: 50,000 rows from ClickHouse to DuckDB in an islo.dev sandbox. Not affiliated with Airbyte."},
+        {"slug": "demo-evals-pydantic-islo-crabbox", "image": "https://zozo123.github.io/demo-evals-pydantic-islo-crabbox/og.png", "title": "Evals or You're Blind", "tldr": "Runnable demo after Joshua Görner's PyCon DE 2026 talk: Pydantic Evals grade a Pydantic AI build-triage agent offline, live, or on a disposable crabbox box."},
+        {"slug": "repo2rlenv-crabbox-demo", "image": "https://zozo123.github.io/repo2rlenv-crabbox-demo/og.png", "title": "Repo2RLEnv × Crabbox", "tldr": "Demo record: scoring Repo2RLEnv pr_diff tasks on an islo.dev sandbox via crabbox, about 50 s per task."},
+        {"slug": "odysseus-crabbox-demo", "image": "https://zozo123.github.io/odysseus-crabbox-demo/og.png", "title": "Odysseus × Crabbox", "tldr": "Demo: run odysseus-dev's Odysseus AI workspace, and its agent's code, on throwaway islo.dev microVMs via openclaw/crabbox, from a fork's one-file crabbox.sh."},
+        {"slug": "longmem-mini-on-islo", "image": "https://zozo123.github.io/longmem-mini-on-islo/og.png", "title": "Tiny Long-Memory Benchmark (toy demo)", "tldr": "A LongMemEval-style toy benchmark fanned out across sandboxes."},
+        {"slug": "meta-harness-on-islo-page", "image": "https://zozo123.github.io/meta-harness-on-islo-page/static/images/og-card.png", "title": "Meta-harness on Islo", "tldr": "A deterministic simulation of harness optimization: scripted agent, pattern-matching proposer, five toy tasks."},
+        {"slug": "env-rosetta-page", "image": "https://zozo123.github.io/env-rosetta-page/assets/og.png", "title": "env-rosetta", "tldr": "Demo: @adithya-s-k's Wordle env from RL_Envs_101 in four RL frameworks (OpenEnv, ORS, NeMo Gym, Verifiers); two ran in islo.dev sandboxes, and the sample rollouts are scripted."},
+        {"slug": "rust-rover-plugin-crabbox", "image": "https://zozo123.github.io/rust-rover-plugin-crabbox/assets/og.png", "title": "Crabbox Runner for RustRover", "tldr": "MVP plugin: run cargo test and clippy from RustRover through the OpenClaw Crabbox CLI on remote Crabbox runners or Islo sandboxes."},
+        {"slug": "gemma-to-jev", "title": "Gemma System One", "tldr": "Research prototype: Gemma 3 4B as a one-forward-pass decision function in native Rust, with shared-state inference across many questions."},
+        {"slug": "pokeloop", "image": "https://zozo123.github.io/pokeloop/assets/og.png", "title": "Pokeloop", "tldr": "Demo: a genetic-algorithm loop over LLM system prompts, designed to fan out across parallel islo.dev sandboxes, with a Pokémon Crystal-style viewer. Results are a scripted playback; no agent was trained."},
+        {"slug": "unity-loop-page", "image": "https://zozo123.github.io/unity-loop-page/assets/og.png", "title": "unity-loop", "tldr": "Proof of concept: Claude proposes and scores CSS variants around one fixed Unity WebGL scene (Lightning VFX by @MirzaBeig), each served from its own islo.dev sandbox. Scores shown come from a deterministic offline demo."},
+        {"slug": "wolfram-fb0", "image": "https://zozo123.github.io/wolfram-fb0/og.png", "title": "wolfram-fb0", "tldr": "Can a 1B local model write x86-64 assembly for Rule 30 inside a VM? First 3 iterations: not yet."}
       ]
     },
     {
@@ -79,7 +79,7 @@
       "sub": "Computational genomics, open physics, and evidence-aware compute.",
       "plate": true,
       "items": [
-        {"slug": "genomics-sandboxes", "image": "https://zozo123.github.io/genomics-sandboxes/og.png", "title": "Bring Your Own Genome", "tldr": "Reference broadcast by VM snapshot: warm one sandbox with the reference and indices, then fork it copy-on-write per chromosome for genomic scatter-gather."},
+        {"slug": "genomics-sandboxes", "image": "https://zozo123.github.io/genomics-sandboxes/og.png", "title": "Reference Broadcast by VM Snapshot", "tldr": "Demo on islo.dev: warm one sandbox with the GRCh38 reference, snapshot it, then fork it copy-on-write per chromosome for genomic scatter-gather."},
         {"slug": "open-physics-problems", "title": "Open Physics Problems", "tldr": "112 open physics problems mapped like open mathematics: publication cultures, refutability, and ten-day agentic sprints."},
         {"slug": "boltzmann-mapreduce", "image": "https://zozo123.github.io/boltzmann-mapreduce/og.png", "title": "Evidence-Aware MapReduce", "tldr": "Fork workers freely while keeping evidence, uncertainty, and shared origins visible, so a repeated error is not counted as consensus. Preprint, 2026."}
       ]
@@ -96,9 +96,9 @@
         {"slug": "microservices-to-microcells", "title": "From Microservices to Microcells", "tldr": "A plain explanation of microcells: tasks that run when needed, save progress, and survive a crash, plus a safe migration path."},
         {"slug": "free-intelligence", "image": "https://zozo123.github.io/free-intelligence/public/og.png", "title": "Free* Intelligence", "tldr": "A field report on the difference between a fluent model answer and an accountable agent harness."},
         {"slug": "the-living-layer", "image": "https://zozo123.github.io/the-living-layer/og.png", "title": "The Living Layer", "tldr": "A speculative architecture thesis: sandboxed execution plus governed, queryable state."},
-        {"slug": "how-stackoverflow-taught-ai", "title": "The Data That Taught the Machines", "tldr": "How Stack Overflow trained its own replacement."},
+        {"slug": "how-stackoverflow-taught-ai", "image": "https://zozo123.github.io/how-stackoverflow-taught-ai/og-image.png", "title": "The Data That Taught the Machines", "tldr": "How Stack Overflow trained its own replacement."},
         {"slug": "loop-coming-apart", "title": "The Loop Is Coming Apart", "tldr": "jj, Crabbox, and the unbundled development cycle: the diff is the unit of work."},
-        {"slug": "intel-story", "title": "Intel: Vision Without Execution", "tldr": "A comic-style look at Intel's 2000–2026 journey."}
+        {"slug": "intel-story", "image": "https://zozo123.github.io/intel-story/assets/og.png", "title": "Intel: Vision Without Execution", "tldr": "An opinion essay in comic style on Intel's bets and misses, 2000–2026."}
       ]
     },
     {
@@ -111,7 +111,7 @@
       "items": [
         {"slug": "nyc-talk", "url": "https://github.com/zozo123/nyc-talk", "title": "Your Agent Escaped Without Escaping the Sandbox", "tldr": "Four doors an agent can walk out through without breaking the wall: the key, the folder, the wire, the verdict. Zenity AI Agent Security Summit, New York, October 2026."},
         {"slug": "airflow-sandbox-townhall", "image": "https://zozo123.github.io/airflow-sandbox-townhall/og-image.png", "title": "A Sandbox Provider for Apache Airflow", "tldr": "One ephemeral microVM per Airflow task try, for fast fan-out and controlled untrusted execution. Airflow Town Hall, July 2026."},
-        {"slug": "rust-china-conf", "image": "https://zozo123.github.io/rust-china-conf/assets/robot-stale_600ms-poster.png", "title": "A Million Builds, a One-Hour Robot", "tldr": "Rust China Conf: a simulated robot, a stale-observation bug, the Rust fix, and the Incredibuild rebuild loop, with recorded evidence."}
+        {"slug": "rust-china-conf", "url": "https://zozo123.github.io/rust-china-conf/en/", "alternates": ["https://zozo123.github.io/rust-china-conf/"], "image": "https://zozo123.github.io/rust-china-conf/assets/og-card.png", "title": "A Million Compiles. One Robot Hour.", "tldr": "Rust China Conf talk page in English (中文 version linked): a simulated robot, a stale-observation bug, the Rust fix, and the Incredibuild rebuild loop, with recorded evidence."}
       ]
     },
     {
@@ -122,8 +122,8 @@
       "sub": "Market microstructure, made touchable.",
       "grid2": true,
       "items": [
-        {"slug": "market-making-sandbox", "title": "How Market Making Works", "tldr": "13 in-browser simulations, from the limit order book to Avellaneda–Stoikov, Glosten–Milgrom, and Kyle's λ."},
-        {"slug": "microprice-sandbox", "title": "Avellaneda–Stoikov, in a Sandbox", "tldr": "Reproducing the HFT paper in about 90 seconds, with no local Python."}
+        {"slug": "market-making-sandbox", "image": "https://zozo123.github.io/market-making-sandbox/og.png", "title": "How Market Making Works", "tldr": "13 in-browser simulations, from the limit order book to Avellaneda–Stoikov, Glosten–Milgrom, and Kyle's λ."},
+        {"slug": "microprice-sandbox", "image": "https://zozo123.github.io/microprice-sandbox/assets/og.png", "title": "Avellaneda–Stoikov, in a Sandbox", "tldr": "A synthetic reproduction of the Avellaneda–Stoikov vs symmetric market-maker comparison from Sasson, Ho & Samson (Stanford MSE448, 2018), run in an Islo sandbox in about 90 seconds with no local Python. The qualitative result reproduces; the dollar magnitudes do not."}
       ]
     }
   ]

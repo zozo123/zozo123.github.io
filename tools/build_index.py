@@ -42,7 +42,7 @@ def thumb(item: dict) -> str:
 def card(item: dict, number: int, *, plate: bool = False, flip: bool = False) -> str:
     fig = f"""<span class="fig-caption"><span class="fc-no">Fig. {number:02d}</span><span class="fc-live">{"● live page" if page_url(item).startswith(SITE) else "● slides &amp; code"}</span></span>"""
     body = f"""<span class="figure-body"><span class="figure-title">{h(item['title'])}</span><span class="figure-tldr">{h(item['tldr'])}</span><span class="mono figure-link">{"View live →" if page_url(item).startswith(SITE) else "View on GitHub →"}</span></span>"""
-    image = f"""<span class="figure-thumb"><img src="{h(thumb(item))}" alt="{h(item['title'])}: page preview" width="760" height="475" loading="lazy"></span>"""
+    image = f"""<span class="figure-thumb"><img src="{h(thumb(item))}" alt="{h(item['title'])}: page preview" width="760" height="400" loading="lazy"></span>"""
     if plate:
         cls = "figure-card plate plate-flip reveal" if flip else "figure-card plate reveal"
         return f"""<a class="{cls}" href="{h(page_url(item))}">{image}<span class="fig-side">{fig}{body}</span></a>"""
@@ -52,7 +52,7 @@ def card(item: dict, number: int, *, plate: bool = False, flip: bool = False) ->
 def selected_card(item: dict) -> str:
     return f"""<article class="figure-card selected-card reveal">
         <a class="figure-thumb" href="{h(page_url(item))}" tabindex="-1" aria-hidden="true"><img src="{h(thumb(item))}" alt="" width="760" height="400" loading="lazy"></a>
-        <span class="fig-caption"><span class="fc-no">{h(item['kicker'])}</span><span class="fc-live">● live</span></span>
+        <span class="fig-caption"><span class="fc-no">{h(item['kicker'])}</span><span class="fc-live">{"● live" if page_url(item).startswith(SITE) else "● code"}</span></span>
         <span class="figure-body"><a class="figure-title" href="{h(page_url(item))}">{h(item['title'])}</a><span class="figure-tldr">{h(item['tldr'])}</span><a class="mono figure-link" href="{h(item['link_url'])}">{h(item['link'])}</a></span>
       </article>"""
 
@@ -315,7 +315,8 @@ def render(data: dict) -> str:
 
 def sitemap(data: dict) -> str:
     urls = [SITE] + [page_url(i) for i in data["selected"] if page_url(i).startswith(SITE)] + [data["featured"]["url"]]
-    urls += [page_url(i) for sec in data["sections"] for i in sec["items"]]
+    for item in (i for sec in data["sections"] for i in sec["items"]):
+        urls += [page_url(item)] + item.get("alternates", [])
     seen, rows = set(), []
     for u in urls:
         if u.startswith(SITE) and u not in seen:

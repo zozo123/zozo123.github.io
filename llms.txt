@@ -12,35 +12,35 @@ This site collects Yossi Eliaz's writing, field guides, and live experiments. Pr
 
 ## Featured essay
 
-- [Databases in the AI Era](https://zozo123.github.io/databases-in-the-ai-era/): What fifty years of database systems must become when the dominant reader of data is no longer human.
+- [Databases in the Age of AI](https://zozo123.github.io/databases-in-the-ai-era/): What fifty years of database systems must become when the dominant reader of data is no longer human.
 
 ## AI Agents & Sandboxes
 
 - [The Sandbox Shift](https://zozo123.github.io/sandboxes-why-how-when/): When isolated execution helps agent systems, and how to choose an approach, with an interactive decider.
-- [CI Caching Is Not One Cache](https://zozo123.github.io/gha-cache-field-guide/): A practical field guide to GitHub Actions cache strategy.
+- [CI Caching Is Not One Cache](https://zozo123.github.io/gha-cache-field-guide/): A June 2026 POC: when native caches, BuildKit, or Incredibuild Build Cache help GitHub Actions on fresh, warm, or touched runners, with POC timings (not a controlled benchmark).
 - [Wasted Cycles](https://zozo123.github.io/wasted-cycles/): Find the machine time blocking agent work: local traces and GitHub Actions latency, with a one-line installer.
-- [Hermetic Agents](https://zozo123.github.io/hermetic-agents-demo/): Code and tests from one spec with no shared scratchpad: separate coder and tester contexts, and QA that assigns blame when they disagree.
+- [Hermetic Agents](https://zozo123.github.io/hermetic-agents-demo/): Deterministic demo: scripted code and test writers get the same spec but disjoint inputs; a QA arbiter with a hidden oracle blames the seeded wrong test. No language model is called.
 - [Bazel 9 × monty](https://zozo123.github.io/bazel-monty/): Building pydantic/monty with Bazel 9 and a remote cache: 121 s cold, 15.7 s fully cached.
 - [AI Sandbox Landscape](https://zozo123.github.io/sandbox-landscape/): A map of the execution-sandbox ecosystem.
 - [One Lab Per Kernel](https://zozo123.github.io/sol-exec-bench/): A technical design for running a GPU-kernel research loop (SOL-ExecBench) reproducibly on Islo sandboxes.
-- [Rust It Up](https://zozo123.github.io/rust-it-up/): Should this repo be rewritten in Rust? An evidence-based migration score.
-- [Inferoa](https://zozo123.github.io/inferoa-demo/): Inference-native agent mechanics: prefix caching, context compression, and routing.
-- [Agentic Airbyte](https://zozo123.github.io/agentic-airbyte/): Design for agent-driven ETL, plus one verified run: 50,000 rows from ClickHouse to DuckDB in an islo.dev sandbox.
-- [Evals or You're Blind](https://zozo123.github.io/demo-evals-pydantic-islo-crabbox/): Pydantic AI and Pydantic Evals on disposable sandboxes.
+- [Rust It Up](https://zozo123.github.io/rust-it-up/): Prototype: paste a public GitHub repo to get an illustrative Rust-migration scorecard. The scanner is mocked; estimates are not audited.
+- [Inferoa Flight Recorder (unofficial demo)](https://zozo123.github.io/inferoa-demo/): Unofficial demo of agentic-in/inferoa: a client-side simulation of prefix caching, context compression, and routing, plus receipts from real vLLM runs in islo.dev sandboxes.
+- [Agentic Airbyte](https://zozo123.github.io/agentic-airbyte/): Design for agent-driven ETL, plus one verified run: 50,000 rows from ClickHouse to DuckDB in an islo.dev sandbox. Not affiliated with Airbyte.
+- [Evals or You're Blind](https://zozo123.github.io/demo-evals-pydantic-islo-crabbox/): Runnable demo after Joshua Görner's PyCon DE 2026 talk: Pydantic Evals grade a Pydantic AI build-triage agent offline, live, or on a disposable crabbox box.
 - [Repo2RLEnv × Crabbox](https://zozo123.github.io/repo2rlenv-crabbox-demo/): Demo record: scoring Repo2RLEnv pr_diff tasks on an islo.dev sandbox via crabbox, about 50 s per task.
-- [Odysseus × Crabbox](https://zozo123.github.io/odysseus-crabbox-demo/): A self-hosted AI workspace on a throwaway microVM, in one command.
+- [Odysseus × Crabbox](https://zozo123.github.io/odysseus-crabbox-demo/): Demo: run odysseus-dev's Odysseus AI workspace, and its agent's code, on throwaway islo.dev microVMs via openclaw/crabbox, from a fork's one-file crabbox.sh.
 - [Tiny Long-Memory Benchmark (toy demo)](https://zozo123.github.io/longmem-mini-on-islo/): A LongMemEval-style toy benchmark fanned out across sandboxes.
 - [Meta-harness on Islo](https://zozo123.github.io/meta-harness-on-islo-page/): A deterministic simulation of harness optimization: scripted agent, pattern-matching proposer, five toy tasks.
-- [env-rosetta](https://zozo123.github.io/env-rosetta-page/): The same Wordle environment across four RL frameworks and four sandboxes.
-- [Crabbox Runner for RustRover](https://zozo123.github.io/rust-rover-plugin-crabbox/): Run Rust commands in OpenClaw Crabbox sandboxes from the IDE.
-- [Gemma System One](https://zozo123.github.io/gemma-to-jev/): Gemma 3 4B as a one-forward-pass decision function in native Rust, with shared-state inference across many questions.
-- [Pokeloop](https://zozo123.github.io/pokeloop/): A genetic algorithm over LLM policies learning Pokémon GO.
-- [unity-loop](https://zozo123.github.io/unity-loop-page/): Unity scenes built by agents on remote sandboxes, judged by a vision-model tournament.
+- [env-rosetta](https://zozo123.github.io/env-rosetta-page/): Demo: @adithya-s-k's Wordle env from RL_Envs_101 in four RL frameworks (OpenEnv, ORS, NeMo Gym, Verifiers); two ran in islo.dev sandboxes, and the sample rollouts are scripted.
+- [Crabbox Runner for RustRover](https://zozo123.github.io/rust-rover-plugin-crabbox/): MVP plugin: run cargo test and clippy from RustRover through the OpenClaw Crabbox CLI on remote Crabbox runners or Islo sandboxes.
+- [Gemma System One](https://zozo123.github.io/gemma-to-jev/): Research prototype: Gemma 3 4B as a one-forward-pass decision function in native Rust, with shared-state inference across many questions.
+- [Pokeloop](https://zozo123.github.io/pokeloop/): Demo: a genetic-algorithm loop over LLM system prompts, designed to fan out across parallel islo.dev sandboxes, with a Pokémon Crystal-style viewer. Results are a scripted playback; no agent was trained.
+- [unity-loop](https://zozo123.github.io/unity-loop-page/): Proof of concept: Claude proposes and scores CSS variants around one fixed Unity WebGL scene (Lightning VFX by @MirzaBeig), each served from its own islo.dev sandbox. Scores shown come from a deterministic offline demo.
 - [wolfram-fb0](https://zozo123.github.io/wolfram-fb0/): Can a 1B local model write x86-64 assembly for Rule 30 inside a VM? First 3 iterations: not yet.
 
 ## Science & Genomics
 
-- [Bring Your Own Genome](https://zozo123.github.io/genomics-sandboxes/): Reference broadcast by VM snapshot: warm one sandbox with the reference and indices, then fork it copy-on-write per chromosome for genomic scatter-gather.
+- [Reference Broadcast by VM Snapshot](https://zozo123.github.io/genomics-sandboxes/): Demo on islo.dev: warm one sandbox with the GRCh38 reference, snapshot it, then fork it copy-on-write per chromosome for genomic scatter-gather.
 - [Open Physics Problems](https://zozo123.github.io/open-physics-problems/): 112 open physics problems mapped like open mathematics: publication cultures, refutability, and ten-day agentic sprints.
 - [Evidence-Aware MapReduce](https://zozo123.github.io/boltzmann-mapreduce/): Fork workers freely while keeping evidence, uncertainty, and shared origins visible, so a repeated error is not counted as consensus. Preprint, 2026.
 
@@ -52,18 +52,18 @@ This site collects Yossi Eliaz's writing, field guides, and live experiments. Pr
 - [The Living Layer](https://zozo123.github.io/the-living-layer/): A speculative architecture thesis: sandboxed execution plus governed, queryable state.
 - [The Data That Taught the Machines](https://zozo123.github.io/how-stackoverflow-taught-ai/): How Stack Overflow trained its own replacement.
 - [The Loop Is Coming Apart](https://zozo123.github.io/loop-coming-apart/): jj, Crabbox, and the unbundled development cycle: the diff is the unit of work.
-- [Intel: Vision Without Execution](https://zozo123.github.io/intel-story/): A comic-style look at Intel's 2000–2026 journey.
+- [Intel: Vision Without Execution](https://zozo123.github.io/intel-story/): An opinion essay in comic style on Intel's bets and misses, 2000–2026.
 
 ## Talks
 
 - [Your Agent Escaped Without Escaping the Sandbox](https://github.com/zozo123/nyc-talk): Four doors an agent can walk out through without breaking the wall: the key, the folder, the wire, the verdict. Zenity AI Agent Security Summit, New York, October 2026.
 - [A Sandbox Provider for Apache Airflow](https://zozo123.github.io/airflow-sandbox-townhall/): One ephemeral microVM per Airflow task try, for fast fan-out and controlled untrusted execution. Airflow Town Hall, July 2026.
-- [A Million Builds, a One-Hour Robot](https://zozo123.github.io/rust-china-conf/): Rust China Conf: a simulated robot, a stale-observation bug, the Rust fix, and the Incredibuild rebuild loop, with recorded evidence.
+- [A Million Compiles. One Robot Hour.](https://zozo123.github.io/rust-china-conf/en/): Rust China Conf talk page in English (中文 version linked): a simulated robot, a stale-observation bug, the Rust fix, and the Incredibuild rebuild loop, with recorded evidence.
 
 ## Quant Finance
 
 - [How Market Making Works](https://zozo123.github.io/market-making-sandbox/): 13 in-browser simulations, from the limit order book to Avellaneda–Stoikov, Glosten–Milgrom, and Kyle's λ.
-- [Avellaneda–Stoikov, in a Sandbox](https://zozo123.github.io/microprice-sandbox/): Reproducing the HFT paper in about 90 seconds, with no local Python.
+- [Avellaneda–Stoikov, in a Sandbox](https://zozo123.github.io/microprice-sandbox/): A synthetic reproduction of the Avellaneda–Stoikov vs symmetric market-maker comparison from Sasson, Ho & Samson (Stanford MSE448, 2018), run in an Islo sandbox in about 90 seconds with no local Python. The qualitative result reproduces; the dollar magnitudes do not.
 
 ## Profiles
 
