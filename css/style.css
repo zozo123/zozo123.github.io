@@ -8,7 +8,7 @@
   --paper-deep: #ece3d0;
   --ink:        #191510;
   --ink-soft:   #4a4237;
-  --ink-faint:  #8d8372;
+  --ink-faint:  #6f6657;
   --vermilion:  #c23a1e;
   --vermilion-deep: #97290f;
   --gold:       #b8892c;
@@ -448,3 +448,8 @@ section[id] { scroll-margin-top: 80px; }
 .selected-card .figure-title:hover { color: var(--vermilion-deep); }
 .selected-card .figure-link { color: var(--vermilion); }
 .selected-card .figure-link:hover { letter-spacing: .16em; }
+
+/* ---------- v4: tap targets ---------- */
+.mast-id, .mast-nav a { display: inline-block; padding: 4px 0; }
+.colophon-links a { display: inline-block; padding: 4px 2px; min-width: 24px; text-align: center; }
+.selected-card .figure-title { padding: 1px 0; }
