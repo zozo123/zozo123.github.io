@@ -122,7 +122,7 @@
       "sub": "Market microstructure, made touchable.",
       "grid2": true,
       "items": [
-        {"slug": "market-making-sandbox", "title": "How Market Makers Print Money", "tldr": "Order books to Avellaneda–Stoikov, Glosten–Milgrom, and Kyle's lambda, interactively."},
+        {"slug": "market-making-sandbox", "title": "How Market Making Works", "tldr": "13 in-browser simulations, from the limit order book to Avellaneda–Stoikov, Glosten–Milgrom, and Kyle's λ."},
         {"slug": "microprice-sandbox", "title": "Avellaneda–Stoikov, in a Sandbox", "tldr": "Reproducing the HFT paper in about 90 seconds, with no local Python."}
       ]
     }

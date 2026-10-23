@@ -62,7 +62,7 @@ This site collects Yossi Eliaz's writing, field guides, and live experiments. Pr
 
 ## Quant Finance
 
-- [How Market Makers Print Money](https://zozo123.github.io/market-making-sandbox/): Order books to Avellaneda–Stoikov, Glosten–Milgrom, and Kyle's lambda, interactively.
+- [How Market Making Works](https://zozo123.github.io/market-making-sandbox/): 13 in-browser simulations, from the limit order book to Avellaneda–Stoikov, Glosten–Milgrom, and Kyle's λ.
 - [Avellaneda–Stoikov, in a Sandbox](https://zozo123.github.io/microprice-sandbox/): Reproducing the HFT paper in about 90 seconds, with no local Python.
 
 ## Profiles
