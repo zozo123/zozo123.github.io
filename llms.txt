@@ -1,6 +1,6 @@
 # Yossi Eliaz: Writing & experiments
 
-> Yossi Eliaz: Principal Engineer, Applied Scientist, Lecturer, GTM Strategy & Partnerships. Current work: AI execution infrastructure (agent sandboxes, CI runners, caching, build acceleration) as Principal Engineer, AI Systems at Incredibuild / islo.dev. Earlier work: computational genomics (3D genome, Hi-C, ENCODE pipelines, CRISPR), autonomous-driving perception at Mobileye, and physics (PhD, University of Houston). Senior Lecturer at HIT.
+> Yossi Eliaz: Principal Engineer, AI Researcher, Lecturer, GTM Strategy & Partnerships. Current work: AI execution infrastructure (agent sandboxes, CI runners, caching, build acceleration) as Principal Engineer, AI Systems at Incredibuild / islo.dev. Earlier work: computational genomics (3D genome, Hi-C, ENCODE pipelines, CRISPR), autonomous-driving perception at Mobileye, and physics (PhD, University of Houston). Senior Lecturer at HIT.
 
 This site collects Yossi Eliaz's writing, field guides, and live experiments. Professional profile, CV, and publications: https://yossieliaz.netlify.app/ (research index: https://yossieliaz.netlify.app/research/).
 

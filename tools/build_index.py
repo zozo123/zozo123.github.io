@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://zozo123.github.io/"
 HOME = "https://yossieliaz.netlify.app/"
 NAME = "Yossi Eliaz"
-TITLE = "Principal Engineer · Applied Scientist · Lecturer · GTM Strategy & Partnerships"
+TITLE = "Principal Engineer · AI Researcher · Lecturer · GTM Strategy & Partnerships"
 SAME_AS = [
     "https://github.com/zozo123",
     "https://www.linkedin.com/in/yossi-eliaz/",
@@ -124,7 +124,7 @@ def render(data: dict) -> str:
     )
     selected = "".join(selected_card(i) for i in data["selected"])
     f = data["featured"]
-    description = "Writing, field guides, and live experiments by Yossi Eliaz on AI agent sandboxes, CI, genomics, and physics. Principal Engineer, Applied Scientist, Lecturer, GTM Strategy & Partnerships."
+    description = "Writing, field guides, and live experiments by Yossi Eliaz on AI agent sandboxes, CI, genomics, and physics. Principal Engineer, AI Researcher, Lecturer, GTM Strategy & Partnerships."
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
