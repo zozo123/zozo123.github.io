@@ -20,23 +20,23 @@ This site collects Yossi Eliaz's writing, field guides, and live experiments. Pr
 - [CI Caching Is Not One Cache](https://zozo123.github.io/gha-cache-field-guide/): A practical field guide to GitHub Actions cache strategy.
 - [Wasted Cycles](https://zozo123.github.io/wasted-cycles/): Find the machine time blocking agent work: local traces and GitHub Actions latency, with a one-line installer.
 - [Hermetic Agents](https://zozo123.github.io/hermetic-agents-demo/): Code and tests from one spec with no shared scratchpad: separate coder and tester contexts, and QA that assigns blame when they disagree.
-- [Bazel 9 × monty](https://zozo123.github.io/bazel-monty/): Building pydantic/monty with Bazel 9, remote cache, and remote execution: 121 s cold, 15.7 s fully cached.
+- [Bazel 9 × monty](https://zozo123.github.io/bazel-monty/): Building pydantic/monty with Bazel 9 and a remote cache: 121 s cold, 15.7 s fully cached.
 - [AI Sandbox Landscape](https://zozo123.github.io/sandbox-landscape/): A map of the execution-sandbox ecosystem.
 - [One Lab Per Kernel](https://zozo123.github.io/sol-exec-bench/): A technical design for running a GPU-kernel research loop (SOL-ExecBench) reproducibly on Islo sandboxes.
 - [Rust It Up](https://zozo123.github.io/rust-it-up/): Should this repo be rewritten in Rust? An evidence-based migration score.
 - [Inferoa](https://zozo123.github.io/inferoa-demo/): Inference-native agent mechanics: prefix caching, context compression, and routing.
-- [Agentic Airbyte](https://zozo123.github.io/agentic-airbyte/): An agent plans, a Crabbox sandbox runs, Airbyte moves the data.
+- [Agentic Airbyte](https://zozo123.github.io/agentic-airbyte/): Design for agent-driven ETL, plus one verified run: 50,000 rows from ClickHouse to DuckDB in an islo.dev sandbox.
 - [Evals or You're Blind](https://zozo123.github.io/demo-evals-pydantic-islo-crabbox/): Pydantic AI and Pydantic Evals on disposable sandboxes.
-- [Repo2RLEnv × Crabbox](https://zozo123.github.io/repo2rlenv-crabbox-demo/): Score Harbor pr_diff tasks on a remote sandbox in about 50 seconds.
+- [Repo2RLEnv × Crabbox](https://zozo123.github.io/repo2rlenv-crabbox-demo/): Demo record: scoring Repo2RLEnv pr_diff tasks on an islo.dev sandbox via crabbox, about 50 s per task.
 - [Odysseus × Crabbox](https://zozo123.github.io/odysseus-crabbox-demo/): A self-hosted AI workspace on a throwaway microVM, in one command.
-- [Tiny Long-Memory Benchmark](https://zozo123.github.io/longmem-mini-on-islo/): A LongMemEval-style memory benchmark fanned out across sandboxes.
+- [Tiny Long-Memory Benchmark (toy demo)](https://zozo123.github.io/longmem-mini-on-islo/): A LongMemEval-style toy benchmark fanned out across sandboxes.
 - [Meta-harness on Islo](https://zozo123.github.io/meta-harness-on-islo-page/): A deterministic simulation of harness optimization: scripted agent, pattern-matching proposer, five toy tasks.
 - [env-rosetta](https://zozo123.github.io/env-rosetta-page/): The same Wordle environment across four RL frameworks and four sandboxes.
 - [Crabbox Runner for RustRover](https://zozo123.github.io/rust-rover-plugin-crabbox/): Run Rust commands in OpenClaw Crabbox sandboxes from the IDE.
 - [Gemma System One](https://zozo123.github.io/gemma-to-jev/): Gemma 3 4B as a one-forward-pass decision function in native Rust, with shared-state inference across many questions.
 - [Pokeloop](https://zozo123.github.io/pokeloop/): A genetic algorithm over LLM policies learning Pokémon GO.
 - [unity-loop](https://zozo123.github.io/unity-loop-page/): Unity scenes built by agents on remote sandboxes, judged by a vision-model tournament.
-- [wolfram-fb0](https://zozo123.github.io/wolfram-fb0/): AI-written x86-64 assembly and eBPF drawing cellular automata straight to /dev/fb0.
+- [wolfram-fb0](https://zozo123.github.io/wolfram-fb0/): Can a 1B local model write x86-64 assembly for Rule 30 inside a VM? First 3 iterations: not yet.
 
 ## Science & Genomics
 

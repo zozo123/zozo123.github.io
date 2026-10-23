@@ -52,23 +52,23 @@
         {"slug": "gha-cache-field-guide", "title": "CI Caching Is Not One Cache", "tldr": "A practical field guide to GitHub Actions cache strategy."},
         {"slug": "wasted-cycles", "image": "https://zozo123.github.io/wasted-cycles/og.png", "title": "Wasted Cycles", "tldr": "Find the machine time blocking agent work: local traces and GitHub Actions latency, with a one-line installer."},
         {"slug": "hermetic-agents-demo", "title": "Hermetic Agents", "tldr": "Code and tests from one spec with no shared scratchpad: separate coder and tester contexts, and QA that assigns blame when they disagree."},
-        {"slug": "bazel-monty", "image": "https://zozo123.github.io/bazel-monty/og-image.png", "title": "Bazel 9 × monty", "tldr": "Building pydantic/monty with Bazel 9, remote cache, and remote execution: 121 s cold, 15.7 s fully cached."},
+        {"slug": "bazel-monty", "image": "https://zozo123.github.io/bazel-monty/og-image.png", "title": "Bazel 9 × monty", "tldr": "Building pydantic/monty with Bazel 9 and a remote cache: 121 s cold, 15.7 s fully cached."},
         {"slug": "sandbox-landscape", "title": "AI Sandbox Landscape", "tldr": "A map of the execution-sandbox ecosystem."},
         {"slug": "sol-exec-bench", "image": "https://zozo123.github.io/sol-exec-bench/og.png", "title": "One Lab Per Kernel", "tldr": "A technical design for running a GPU-kernel research loop (SOL-ExecBench) reproducibly on Islo sandboxes."},
         {"slug": "rust-it-up", "image": "https://zozo123.github.io/rust-it-up/og-v2.png", "title": "Rust It Up", "tldr": "Should this repo be rewritten in Rust? An evidence-based migration score."},
         {"slug": "inferoa-demo", "title": "Inferoa", "tldr": "Inference-native agent mechanics: prefix caching, context compression, and routing."},
-        {"slug": "agentic-airbyte", "title": "Agentic Airbyte", "tldr": "An agent plans, a Crabbox sandbox runs, Airbyte moves the data."},
+        {"slug": "agentic-airbyte", "title": "Agentic Airbyte", "tldr": "Design for agent-driven ETL, plus one verified run: 50,000 rows from ClickHouse to DuckDB in an islo.dev sandbox."},
         {"slug": "demo-evals-pydantic-islo-crabbox", "title": "Evals or You're Blind", "tldr": "Pydantic AI and Pydantic Evals on disposable sandboxes."},
-        {"slug": "repo2rlenv-crabbox-demo", "title": "Repo2RLEnv × Crabbox", "tldr": "Score Harbor pr_diff tasks on a remote sandbox in about 50 seconds."},
+        {"slug": "repo2rlenv-crabbox-demo", "title": "Repo2RLEnv × Crabbox", "tldr": "Demo record: scoring Repo2RLEnv pr_diff tasks on an islo.dev sandbox via crabbox, about 50 s per task."},
         {"slug": "odysseus-crabbox-demo", "title": "Odysseus × Crabbox", "tldr": "A self-hosted AI workspace on a throwaway microVM, in one command."},
-        {"slug": "longmem-mini-on-islo", "title": "Tiny Long-Memory Benchmark", "tldr": "A LongMemEval-style memory benchmark fanned out across sandboxes."},
+        {"slug": "longmem-mini-on-islo", "title": "Tiny Long-Memory Benchmark (toy demo)", "tldr": "A LongMemEval-style toy benchmark fanned out across sandboxes."},
         {"slug": "meta-harness-on-islo-page", "title": "Meta-harness on Islo", "tldr": "A deterministic simulation of harness optimization: scripted agent, pattern-matching proposer, five toy tasks."},
         {"slug": "env-rosetta-page", "title": "env-rosetta", "tldr": "The same Wordle environment across four RL frameworks and four sandboxes."},
         {"slug": "rust-rover-plugin-crabbox", "title": "Crabbox Runner for RustRover", "tldr": "Run Rust commands in OpenClaw Crabbox sandboxes from the IDE."},
         {"slug": "gemma-to-jev", "title": "Gemma System One", "tldr": "Gemma 3 4B as a one-forward-pass decision function in native Rust, with shared-state inference across many questions."},
         {"slug": "pokeloop", "title": "Pokeloop", "tldr": "A genetic algorithm over LLM policies learning Pokémon GO."},
         {"slug": "unity-loop-page", "title": "unity-loop", "tldr": "Unity scenes built by agents on remote sandboxes, judged by a vision-model tournament."},
-        {"slug": "wolfram-fb0", "title": "wolfram-fb0", "tldr": "AI-written x86-64 assembly and eBPF drawing cellular automata straight to /dev/fb0."}
+        {"slug": "wolfram-fb0", "title": "wolfram-fb0", "tldr": "Can a 1B local model write x86-64 assembly for Rule 30 inside a VM? First 3 iterations: not yet."}
       ]
     },
     {
