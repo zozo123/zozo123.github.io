@@ -16,7 +16,7 @@ python3 tools/build_index.py
 ```
 
 CI fails if the committed `index.html` does not match the data. `js/main.js` only adds motion and
-replaces the repo, year, and follower counts with live GitHub API values. Typography: Fraunces,
+replaces the years-on-GitHub count with the live GitHub API value. Typography: Fraunces,
 Spectral, and IBM Plex Mono. Share cards are SVG sources in `assets/og/` rendered to PNG at
 1200×630 (`rsvg-convert -w 1200 -h 630 assets/og/card.svg -o assets/og/card.png`).
 

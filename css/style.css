@@ -186,7 +186,7 @@ section[id] { scroll-margin-top: 80px; }
 
 /* stats band */
 .hero-stats {
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(2, 1fr);
   margin-top: 52px; border: 1.5px solid var(--ink);
   background: var(--card); box-shadow: 10px 10px 0 var(--paper-deep);
 }
@@ -424,9 +424,6 @@ section[id] { scroll-margin-top: 80px; }
 }
 @media (max-width: 900px) {
   .hero-meta { grid-template-columns: 1fr; gap: 36px; }
-  .hero-stats { grid-template-columns: repeat(2, 1fr); }
-  .stat:nth-child(2) { border-right: none; }
-  .stat:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
   .latest-inner { grid-template-columns: 1fr; gap: 44px; }
   .latest-plate { transform: rotate(0); }
 }

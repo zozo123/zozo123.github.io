@@ -1,4 +1,4 @@
-/* Collected works: motion and live GitHub numbers. All content is static HTML. */
+/* Collected works: motion and the live years-on-GitHub count. All content is static HTML. */
 document.body.classList.remove("no-js");
 
 const dateEl = document.getElementById("today-date");
@@ -28,7 +28,7 @@ if (reduceMotion) {
   document.querySelectorAll(".reveal:not(.in-load)").forEach((el) => io.observe(el));
 }
 
-/* Count up to each stat; repos, years, and followers come from the public GitHub API when it answers. */
+/* Count up to each stat; years on GitHub comes from the public GitHub API when it answers. */
 function countUp(el) {
   const target = +el.dataset.count;
   if (reduceMotion) { el.textContent = target; return; }
@@ -47,8 +47,6 @@ const live = fetch("https://api.github.com/users/zozo123", { headers: { Accept: 
   .then((user) => {
     if (!user) return;
     const values = {
-      public_repos: user.public_repos,
-      followers: user.followers,
       years: new Date().getFullYear() - new Date(user.created_at).getFullYear(),
     };
     stats.forEach((el) => {

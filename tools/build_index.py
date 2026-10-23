@@ -2,7 +2,7 @@
 """Render index.html, sitemap.xml, and llms.txt from data/works.json.
 
 The page is static HTML so readers, crawlers, and answer engines see every
-entry without JavaScript; js/main.js only adds motion and live GitHub numbers.
+entry without JavaScript; js/main.js only adds motion and the live years-on-GitHub count.
 Run: python3 tools/build_index.py
 """
 from __future__ import annotations
@@ -23,8 +23,8 @@ SAME_AS = [
     "https://x.com/YossiEliaz",
     HOME,
 ]
-# Static fallbacks; js/main.js replaces repos, years, and followers with live GitHub values.
-STATS = {"repos": 277, "years": 15, "followers": 50}
+# Static fallback; js/main.js replaces it with the live value from the GitHub API.
+YEARS_ON_GITHUB = 15
 
 
 def h(value: object) -> str:
@@ -229,10 +229,8 @@ def render(data: dict) -> str:
   </div>
 
   <div class="hero-stats reveal in-load d5">
-    <div class="stat"><span class="stat-n" data-count="{STATS['repos']}" data-live="public_repos">{STATS['repos']}</span><span class="mono stat-l">public repos</span></div>
     <div class="stat"><span class="stat-n" data-count="{total_pages}">{total_pages}</span><span class="mono stat-l">live pages here</span></div>
-    <div class="stat"><span class="stat-n" data-count="{STATS['years']}" data-live="years">{STATS['years']}</span><span class="mono stat-l">years on GitHub</span></div>
-    <div class="stat"><span class="stat-n" data-count="{STATS['followers']}" data-live="followers">{STATS['followers']}</span><span class="mono stat-l">followers</span></div>
+    <div class="stat"><span class="stat-n" data-count="{YEARS_ON_GITHUB}" data-live="years">{YEARS_ON_GITHUB}</span><span class="mono stat-l">years on GitHub</span></div>
   </div>
 </section>
 
