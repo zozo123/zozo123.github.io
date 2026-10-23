@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render index.html, sitemap.xml, and llms.txt from data/works.json.
+"""Render index.html, 404.html, sitemap.xml, llms.txt, and robots.txt from data/works.json.
 
 The page is static HTML so readers, crawlers, and answer engines see every
 entry without JavaScript; js/main.js only adds motion and the live years-on-GitHub count.
@@ -312,6 +312,63 @@ def render(data: dict) -> str:
 """
 
 
+def not_found() -> str:
+    """GitHub Pages serves this file, with status 404, for any missing path, so every link is absolute."""
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f6f1e6">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex">
+<title>Not found · {NAME}</title>
+<meta name="description" content="Nothing is published at this address on {h(NAME)}'s writing site.">
+<link rel="icon" href="{SITE}assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&amp;family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{SITE}css/style.css">
+</head>
+<body class="page-404">
+
+<a class="skip-link mono" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="mono mast-id" href="{SITE}">Y.&nbsp;Eliaz — Collected&nbsp;Works</a>
+    <nav class="mast-nav mono" aria-label="Primary">
+      <a href="{SITE}#work">Work</a>
+      <a href="{HOME}">Profile&nbsp;↗</a>
+      <a class="mast-gh" href="https://github.com/zozo123">GitHub&nbsp;↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="hero not-found">
+  <div class="hero-rule mono">
+    <span class="hr-tag">Error 404 · not found</span>
+    <span class="hero-rule-line"></span>
+  </div>
+  <h1 class="hero-title">Not <em>found.</em></h1>
+  <p class="section-sub">Nothing is published at this address. The page may have moved, or the link may be mistyped.</p>
+  <nav class="hero-affil mono" aria-label="Where to go next">
+    <a href="{SITE}">Collected works</a>
+    <a href="{HOME}">Professional site</a>
+    <a href="{SITE}sitemap.xml">Sitemap</a>
+    <a href="{SITE}llms.txt">llms.txt</a>
+  </nav>
+</main>
+
+<footer class="colophon">
+  <div class="asterism mono" aria-hidden="true">✻&nbsp;&nbsp;✻&nbsp;&nbsp;✻</div>
+  <p class="mono colophon-note">© {NAME}</p>
+</footer>
+</body>
+</html>
+"""
+
+
 def sitemap(data: dict) -> str:
     urls = [SITE] + [page_url(i) for i in data["selected"] if page_url(i).startswith(SITE)] + [data["featured"]["url"]]
     for item in (i for sec in data["sections"] for i in sec["items"]):
@@ -347,10 +404,11 @@ def llms(data: dict) -> str:
 def main() -> None:
     data = json.loads((ROOT / "data" / "works.json").read_text(encoding="utf-8"))
     (ROOT / "index.html").write_text(render(data), encoding="utf-8")
+    (ROOT / "404.html").write_text(not_found(), encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(sitemap(data), encoding="utf-8")
     (ROOT / "llms.txt").write_text(llms(data), encoding="utf-8")
     (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}sitemap.xml\n", encoding="utf-8")
-    print("wrote index.html, sitemap.xml, llms.txt, robots.txt")
+    print("wrote index.html, 404.html, sitemap.xml, llms.txt, robots.txt")
 
 
 if __name__ == "__main__":

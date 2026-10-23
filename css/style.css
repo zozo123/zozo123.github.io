@@ -453,3 +453,11 @@ section[id] { scroll-margin-top: 80px; }
 .mast-id, .mast-nav a { display: inline-block; padding: 4px 0; }
 .colophon-links a { display: inline-block; padding: 4px 2px; min-width: 24px; text-align: center; }
 .selected-card .figure-title { padding: 1px 0; }
+
+/* ---------- 404 page ---------- */
+.page-404 { min-height: 100vh; display: flex; flex-direction: column; }
+.page-404 > header, .page-404 > main, .page-404 > footer { width: 100%; }
+.page-404 > main { flex: 1; }
+.not-found .hero-title { margin-bottom: 30px; }
+.not-found .hero-title em { font-style: italic; font-weight: 480; color: var(--vermilion-deep); }
+.not-found .section-sub { font-size: 19px; }
