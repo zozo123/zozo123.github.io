@@ -110,6 +110,7 @@
       "grid2": true,
       "items": [
         {"slug": "nyc-talk", "url": "https://github.com/zozo123/nyc-talk", "title": "Your Agent Escaped Without Escaping the Sandbox", "tldr": "Four doors an agent can walk out through without breaking the wall: the key, the folder, the wire, the verdict. Zenity AI Agent Security Summit, New York, October 2026."},
+        {"slug": "cam-talk-london-26", "url": "https://github.com/zozo123/cam-talk-london-26", "title": "Forkable Sandboxes: The Runtime Layer for AI Software Factories", "tldr": "Seminar at the Cambridge Computer Laboratory Systems Research Group, 15 October 2026: forkable, isolated execution for coding agents. Slides, scripts and references."},
         {"slug": "airflow-sandbox-townhall", "image": "https://zozo123.github.io/airflow-sandbox-townhall/og-image.png", "title": "A Sandbox Provider for Apache Airflow", "tldr": "One ephemeral microVM per Airflow task try, for fast fan-out and controlled untrusted execution. Airflow Town Hall, July 2026."},
         {"slug": "rust-china-conf", "url": "https://zozo123.github.io/rust-china-conf/en/", "alternates": ["https://zozo123.github.io/rust-china-conf/"], "image": "https://zozo123.github.io/rust-china-conf/assets/og-card.png", "title": "A Million Compiles. One Robot Hour.", "tldr": "Rust China Conf talk page in English (中文 version linked): a simulated robot, a stale-observation bug, the Rust fix, and the Incredibuild rebuild loop, with recorded evidence."}
       ]

@@ -57,6 +57,7 @@ This site collects Yossi Eliaz's writing, field guides, and live experiments. Pr
 ## Talks
 
 - [Your Agent Escaped Without Escaping the Sandbox](https://github.com/zozo123/nyc-talk): Four doors an agent can walk out through without breaking the wall: the key, the folder, the wire, the verdict. Zenity AI Agent Security Summit, New York, October 2026.
+- [Forkable Sandboxes: The Runtime Layer for AI Software Factories](https://github.com/zozo123/cam-talk-london-26): Seminar at the Cambridge Computer Laboratory Systems Research Group, 15 October 2026: forkable, isolated execution for coding agents. Slides, scripts and references.
 - [A Sandbox Provider for Apache Airflow](https://zozo123.github.io/airflow-sandbox-townhall/): One ephemeral microVM per Airflow task try, for fast fan-out and controlled untrusted execution. Airflow Town Hall, July 2026.
 - [A Million Compiles. One Robot Hour.](https://zozo123.github.io/rust-china-conf/en/): Rust China Conf talk page in English (中文 version linked): a simulated robot, a stale-observation bug, the Rust fix, and the Incredibuild rebuild loop, with recorded evidence.
 
