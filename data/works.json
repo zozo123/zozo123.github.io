@@ -109,6 +109,7 @@
       "sub": "Slides and talk pages.",
       "grid2": true,
       "items": [
+        {"slug": "nyc-talk", "url": "https://github.com/zozo123/nyc-talk", "title": "Your Agent Escaped Without Escaping the Sandbox", "tldr": "Four doors an agent can walk out through without breaking the wall: the key, the folder, the wire, the verdict. Zenity AI Agent Security Summit, New York, October 2026."},
         {"slug": "airflow-sandbox-townhall", "image": "https://zozo123.github.io/airflow-sandbox-townhall/og-image.png", "title": "A Sandbox Provider for Apache Airflow", "tldr": "One ephemeral microVM per Airflow task try, for fast fan-out and controlled untrusted execution. Airflow Town Hall, July 2026."},
         {"slug": "rust-china-conf", "image": "https://zozo123.github.io/rust-china-conf/assets/robot-stale_600ms-poster.png", "title": "A Million Builds, a One-Hour Robot", "tldr": "Rust China Conf: a simulated robot, a stale-observation bug, the Rust fix, and the Incredibuild rebuild loop, with recorded evidence."}
       ]

@@ -40,8 +40,8 @@ def thumb(item: dict) -> str:
 
 
 def card(item: dict, number: int, *, plate: bool = False, flip: bool = False) -> str:
-    fig = f"""<span class="fig-caption"><span class="fc-no">Fig. {number:02d}</span><span class="fc-live">● live page</span></span>"""
-    body = f"""<span class="figure-body"><span class="figure-title">{h(item['title'])}</span><span class="figure-tldr">{h(item['tldr'])}</span><span class="mono figure-link">View live →</span></span>"""
+    fig = f"""<span class="fig-caption"><span class="fc-no">Fig. {number:02d}</span><span class="fc-live">{"● live page" if page_url(item).startswith(SITE) else "● slides &amp; code"}</span></span>"""
+    body = f"""<span class="figure-body"><span class="figure-title">{h(item['title'])}</span><span class="figure-tldr">{h(item['tldr'])}</span><span class="mono figure-link">{"View live →" if page_url(item).startswith(SITE) else "View on GitHub →"}</span></span>"""
     image = f"""<span class="figure-thumb"><img src="{h(thumb(item))}" alt="{h(item['title'])}: page preview" width="760" height="475" loading="lazy"></span>"""
     if plate:
         cls = "figure-card plate plate-flip reveal" if flip else "figure-card plate reveal"
@@ -117,7 +117,8 @@ def render(data: dict) -> str:
     for sec in data["sections"]:
         markup, n = section(sec, n)
         sections.append(markup)
-    total_pages = len(data["selected"]) + 1 + sum(len(s["items"]) for s in data["sections"])
+    all_urls = [page_url(i) for i in data["selected"]] + [data["featured"]["url"]] + [page_url(i) for s in data["sections"] for i in s["items"]]
+    total_pages = len({u for u in all_urls if u.startswith(SITE)})
     toc = "".join(
         f"""<li><a href="#{h(s['id'])}"><span class="toc-no">§{s['no'][-2:]}</span><span class="toc-t">{h(s['toc'])}</span><span class="toc-dots"></span><span class="toc-n">{len(s['items']):02d}</span></a></li>"""
         for s in data["sections"]
@@ -320,7 +321,7 @@ def sitemap(data: dict) -> str:
     urls += [page_url(i) for sec in data["sections"] for i in sec["items"]]
     seen, rows = set(), []
     for u in urls:
-        if u not in seen:
+        if u.startswith(SITE) and u not in seen:
             seen.add(u)
             rows.append(f"<url><loc>{h(u)}</loc></url>")
     return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(rows) + "</urlset>\n"
