@@ -16,13 +16,14 @@ SITE = "https://zozo123.github.io/"
 HOME = "https://yossieliaz.netlify.app/"
 NAME = "Yossi Eliaz"
 TITLE = "Principal Engineer · AI Researcher · Lecturer · GTM Strategy & Partnerships"
-SAME_AS = [
-    "https://github.com/zozo123",
-    "https://www.linkedin.com/in/yossi-eliaz/",
-    "https://scholar.google.com/citations?user=NL1ZyOgAAAAJ",
-    "https://x.com/YossiEliaz",
-    HOME,
+PROFILES = [
+    ("GitHub", "https://github.com/zozo123", ""),
+    ("LinkedIn", "https://www.linkedin.com/in/yossi-eliaz/", ""),
+    ("Google Scholar", "https://scholar.google.com/citations?user=NL1ZyOgAAAAJ", ""),
+    ("X", "https://x.com/YossiEliaz", ""),
+    ("Professional site", HOME, "profile, CV, and publications"),
 ]
+SAME_AS = [url for _, url, _ in PROFILES]
 # Static fallback; js/main.js replaces it with the live value from the GitHub API.
 YEARS_ON_GITHUB = 15
 
@@ -92,12 +93,10 @@ def json_ld(data: dict) -> str:
         "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of Houston"},
         "knowsAbout": ["AI agent sandboxes", "CI and build acceleration", "Computational genomics", "Machine learning", "Computer vision", "Physics"],
     }
+    works = [data["featured"]] + data["selected"] + [i for sec in data["sections"] for i in sec["items"]]
     parts = [
         {"@type": "CreativeWork", "name": i["title"], "url": page_url(i), "description": i["tldr"], "author": {"@id": f"{HOME}#person"}}
-        for i in data["selected"]
-    ] + [
-        {"@type": "CreativeWork", "name": i["title"], "url": page_url(i), "description": i["tldr"], "author": {"@id": f"{HOME}#person"}}
-        for sec in data["sections"] for i in sec["items"]
+        for i in works
     ]
     graph = {
         "@context": "https://schema.org",
@@ -124,7 +123,7 @@ def render(data: dict) -> str:
     )
     selected = "".join(selected_card(i) for i in data["selected"])
     f = data["featured"]
-    description = "Writing, field guides, and live experiments by Yossi Eliaz on AI agent sandboxes, CI, genomics, and physics. Principal Engineer, AI Researcher, Lecturer, GTM Strategy & Partnerships."
+    description = f"Writing and live experiments by {NAME} ({TITLE}) on agent sandboxes, CI, genomics, and physics."
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -341,7 +340,7 @@ def llms(data: dict) -> str:
     for sec in data["sections"]:
         lines += ["", f"## {sec['toc']}", ""]
         lines += [f"- [{i['title']}]({page_url(i)}): {i['tldr']}" for i in sec["items"]]
-    lines += ["", "## Profiles", ""] + [f"- {u}" for u in SAME_AS]
+    lines += ["", "## Profiles", ""] + [f"- [{name}]({url})" + (f": {note}" if note else "") for name, url, note in PROFILES]
     return "\n".join(lines) + "\n"
 
 

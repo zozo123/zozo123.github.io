@@ -67,8 +67,8 @@ This site collects Yossi Eliaz's writing, field guides, and live experiments. Pr
 
 ## Profiles
 
-- https://github.com/zozo123
-- https://www.linkedin.com/in/yossi-eliaz/
-- https://scholar.google.com/citations?user=NL1ZyOgAAAAJ
-- https://x.com/YossiEliaz
-- https://yossieliaz.netlify.app/
+- [GitHub](https://github.com/zozo123)
+- [LinkedIn](https://www.linkedin.com/in/yossi-eliaz/)
+- [Google Scholar](https://scholar.google.com/citations?user=NL1ZyOgAAAAJ)
+- [X](https://x.com/YossiEliaz)
+- [Professional site](https://yossieliaz.netlify.app/): profile, CV, and publications
