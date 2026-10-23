@@ -88,7 +88,6 @@ def json_ld(data: dict) -> str:
         "name": NAME,
         "jobTitle": TITLE,
         "url": HOME,
-        "image": "https://avatars.githubusercontent.com/u/553010?v=4",
         "sameAs": SAME_AS + [SITE],
         "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of Houston"},
         "knowsAbout": ["AI agent sandboxes", "CI and build acceleration", "Computational genomics", "Machine learning", "Computer vision", "Physics"],
