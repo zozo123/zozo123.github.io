@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://zozo123.github.io/"
 HOME = "https://yossieliaz.netlify.app/"
 NAME = "Yossi Eliaz"
-TITLE = "Principal Engineer · AI Researcher · Lecturer · GTM Strategy & Partnerships"
+TITLE = "Engineering & Growth · Incredibuild / islo.dev"
 PROFILES = [
     ("GitHub", "https://github.com/zozo123", ""),
     ("LinkedIn", "https://www.linkedin.com/in/yossi-eliaz/", ""),
@@ -201,10 +201,10 @@ def render(data: dict) -> str:
     <div class="hero-left reveal in-load d3">
       <p class="hero-abstract">
         <span class="mono abstract-label">Abstract</span>
-        <strong>{h(TITLE)}.</strong> Build difficult systems. Make them useful.
-        I build AI execution infrastructure, production ML, and scientific software, on a path from
-        GPS/navigation and Android/Linux kernels through computational physics, genomics, and
-        autonomous-driving perception to secure agent sandboxes. <span class="thin">PhD in Physics; Senior Lecturer at HIT.</span>
+        <strong>{h(TITLE)}</strong><br>AI, Genomics, Physics.
+        At Incredibuild / islo.dev, I work on engineering and growth for AI infrastructure.
+        My background spans Linux kernels, computational genomics, and machine learning for autonomous driving.
+        <span class="thin">I have a PhD in physics and teach software engineering at HIT.</span>
       </p>
       <div class="hero-affil mono">
         <span class="affil-label">Correspondence</span>
