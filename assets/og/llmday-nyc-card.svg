@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f6f1e6"/>
+  <rect width="1200" height="8" fill="#97290f"/>
+  <text x="80" y="118" font-family="Menlo, monospace" font-size="22" fill="#97290f" letter-spacing="3">LLMDAY NYC · 29 OCT 2026 · TALK</text>
+  <text x="76" y="236" font-family="Georgia, serif" font-size="88" fill="#191510">The Sandbox Is the</text>
+  <text x="76" y="334" font-family="Georgia, serif" font-size="88" fill="#191510">Agent Runtime</text>
+  <text x="80" y="404" font-family="Georgia, serif" font-size="34" fill="#4a4237">What breaks when execution becomes disposable.</text>
+  <line x1="80" y1="462" x2="1120" y2="462" stroke="#191510" stroke-width="2"/>
+  <text x="80" y="514" font-family="Menlo, monospace" font-size="21" fill="#97290f">ISOLATION · TOOL BOUNDARIES · CREDENTIALS · SNAPSHOTS · TRACES</text>
+  <text x="80" y="596" font-family="Menlo, monospace" font-size="20" fill="#4a4237">Yossi Eliaz · Microsoft Experience Center, New York</text>
+</svg>

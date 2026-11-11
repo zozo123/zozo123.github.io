@@ -54,14 +54,39 @@ def og_image() -> str:
     return f"{SITE}assets/og/card.png?v={hashlib.sha256(svg.encode('utf-8')).hexdigest()[:8]}"
 
 
+def labels(item: dict) -> tuple[str, str]:
+    """Caption badge and link text. An item may set either with "badge" and "cta"."""
+    on_site = page_url(item).startswith(SITE)
+    badge = item.get("badge") or ("live page" if on_site else "slides & code")
+    cta = item.get("cta") or ("View live →" if on_site else "View on GitHub →")
+    return badge, cta
+
+
 def card(item: dict, number: int, *, plate: bool = False, flip: bool = False) -> str:
-    fig = f"""<span class="fig-caption"><span class="fc-no">Fig. {number:02d}</span><span class="fc-live">{"● live page" if page_url(item).startswith(SITE) else "● slides &amp; code"}</span></span>"""
-    body = f"""<span class="figure-body"><span class="figure-title">{h(item['title'])}</span><span class="figure-tldr">{h(item['tldr'])}</span><span class="mono figure-link">{"View live →" if page_url(item).startswith(SITE) else "View on GitHub →"}</span></span>"""
+    badge, cta = labels(item)
+    fig = f"""<span class="fig-caption"><span class="fc-no">Fig. {number:02d}</span><span class="fc-live">● {h(badge)}</span></span>"""
+    body = f"""<span class="figure-body"><span class="figure-title">{h(item['title'])}</span><span class="figure-tldr">{h(item['tldr'])}</span><span class="mono figure-link">{h(cta)}</span></span>"""
     image = f"""<span class="figure-thumb"><img src="{h(thumb(item))}" alt="{h(item['title'])}: page preview" width="760" height="400" loading="lazy"></span>"""
     if plate:
         cls = "figure-card plate plate-flip reveal" if flip else "figure-card plate reveal"
         return f"""<a class="{cls}" href="{h(page_url(item))}">{image}<span class="fig-side">{fig}{body}</span></a>"""
     return f"""<a class="figure-card reveal" href="{h(page_url(item))}">{image}{fig}{body}</a>"""
+
+
+def link_card(item: dict, number: int) -> str:
+    """A card whose title and links are separate anchors, as in selected work, so "more" can add links.
+
+    The title link is stretched over the card in CSS, so a click anywhere still opens the page.
+    """
+    badge, cta = labels(item)
+    url = h(page_url(item))
+    links = [(cta, page_url(item))] + [(m["label"], m["url"]) for m in item.get("more", [])]
+    anchors = "".join(f'<a class="mono figure-link" href="{h(u)}">{h(label)}</a>' for label, u in links)
+    return f"""<article class="figure-card selected-card link-card reveal">
+        <a class="figure-thumb" href="{url}" tabindex="-1" aria-hidden="true"><img src="{h(thumb(item))}" alt="" width="760" height="400" loading="lazy"></a>
+        <span class="fig-caption"><span class="fc-no">Fig. {number:02d}</span><span class="fc-live">● {h(badge)}</span></span>
+        <span class="figure-body"><a class="figure-title" href="{url}">{h(item['title'])}</a><span class="figure-tldr">{h(item['tldr'])}</span><span class="figure-links">{anchors}</span></span>
+      </article>"""
 
 
 def selected_card(item: dict) -> str:
@@ -78,6 +103,11 @@ def section(sec: dict, start: int) -> tuple[str, int]:
     n = start
     for i, item in enumerate(items):
         n += 1
+        if sec.get("linked"):
+            cards.append(link_card(item, n))
+            continue
+        if item.get("more"):
+            raise SystemExit(f"{item['slug']}: \"more\" links need a section with \"linked\": true")
         closing = sec.get("plate") and i == len(items) - 1 and len(items) > 2 and (len(items) - 2) % 3 == 0
         cards.append(card(item, n, plate=bool(sec.get("plate") and (i == 0 or closing)), flip=bool(closing)))
     grid = "figure-grid figure-grid-2" if sec.get("grid2") else "figure-grid"
@@ -412,7 +442,9 @@ def llms(data: dict) -> str:
     lines += ["", f"## Featured essay", "", f"- [{data['featured']['title']}]({data['featured']['url']}): {data['featured']['tldr']}"]
     for sec in data["sections"]:
         lines += ["", f"## {sec['toc']}", ""]
-        lines += [f"- [{i['title']}]({page_url(i)}): {i['tldr']}" for i in sec["items"]]
+        for i in sec["items"]:
+            more = "".join(f" [{m['label'].removesuffix(' →')}]({m['url']})" for m in i.get("more", []))
+            lines.append(f"- [{i['title']}]({page_url(i)}): {i['tldr']}{more}")
     lines += ["", "## Profiles", ""] + [f"- [{name}]({url})" + (f": {note}" if note else "") for name, url, note in PROFILES]
     return "\n".join(lines) + "\n"
 

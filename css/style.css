@@ -455,6 +455,15 @@ section[id] { scroll-margin-top: 80px; }
 .colophon-links a { display: inline-block; padding: 4px 2px; min-width: 24px; text-align: center; }
 .selected-card .figure-title { padding: 1px 0; }
 
+/* ---------- v5: several links on one card (talks) ---------- */
+.link-card { position: relative; }
+.link-card .figure-title::after { content: ""; position: absolute; inset: 0; } /* a click anywhere opens the page, as on the other cards */
+.figure-links { margin-top: auto; padding-top: 6px; display: flex; flex-wrap: wrap; gap: 0 22px; }
+.figure-links .figure-link { position: relative; z-index: 1; margin-top: 0; padding: 6px 0; }
+/* widening the letters on hover would push the next link around, so underline instead */
+.figure-card:hover .figure-links .figure-link, .selected-card .figure-links .figure-link:hover { letter-spacing: .1em; }
+.selected-card .figure-links .figure-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
 /* ---------- 404 page ---------- */
 .page-404 { min-height: 100vh; display: flex; flex-direction: column; }
 .page-404 > header, .page-404 > main, .page-404 > footer { width: 100%; }

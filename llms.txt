@@ -56,10 +56,13 @@ This site collects Yossi Eliaz's writing, field guides, and live experiments. Pr
 
 ## Talks
 
+- [The Sandbox Is the Agent Runtime: What Breaks When Execution Becomes Disposable](https://llmday.com/2026-nyc-q4/): Lessons from running thousands of disposable environments for agents: isolation, tool boundaries, short-lived credentials, snapshots, traces, and failure recovery. LLMday NYC, 29 October 2026.
 - [Your Agent Escaped Without Escaping the Sandbox](https://github.com/zozo123/nyc-talk): Four doors an agent can walk out through without breaking the wall: the key, the folder, the wire, the verdict. Zenity AI Agent Security Summit, New York, October 2026.
+- [SWFactory Workshop: Airflow × Crabbox](https://zozo123.github.io/ariflow-swfactory/osai-week-2026.html): Hands-on community workshop at Open Source AI Week 2026: a GitHub issue becomes a reviewable, evidence-backed pull request, with Airflow owning the lifecycle and Crabbox the disposable execution. San Francisco, 19 October 2026.
 - [Forkable Sandboxes: The Runtime Layer for AI Software Factories](https://github.com/zozo123/cam-talk-london-26): Seminar at the Cambridge Computer Laboratory Systems Research Group, 15 October 2026: forkable, isolated execution for coding agents. Slides, scripts and references.
-- [A Sandbox Provider for Apache Airflow](https://zozo123.github.io/airflow-sandbox-townhall/): One ephemeral microVM per Airflow task try, for fast fan-out and controlled untrusted execution. Airflow Town Hall, July 2026.
 - [A Million Compiles. One Robot Hour.](https://zozo123.github.io/rust-china-conf/en/): Rust China Conf talk page in English (中文 version linked): a simulated robot, a stale-observation bug, the Rust fix, and the Incredibuild rebuild loop, with recorded evidence.
+- [Graphs of AI Coding: Orchestrating Agentic MapReduce with Airflow's New Sandboxes](https://www.youtube.com/watch?v=54Cfk91HNp8): AI software engineering modeled as an Airflow DAG: map refactoring tasks across a codebase, run each in a sandbox, and reduce the results into one pull request. Airflow Summit, Austin, 31 August to 2 September 2026. [Slides (PDF)](https://airflowsummit.org/slides/2026/graphs-of-ai-coding.pdf)
+- [A Sandbox Provider for Apache Airflow](https://zozo123.github.io/airflow-sandbox-townhall/): One ephemeral microVM per Airflow task try, for fast fan-out and controlled untrusted execution. Airflow Town Hall, July 2026. [Town Hall recording](https://www.youtube.com/watch?v=cznc1tFYnMI)
 
 ## Quant Finance
 
