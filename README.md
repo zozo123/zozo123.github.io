@@ -19,6 +19,8 @@ python3 tools/build_index.py
 data. `js/main.js` only adds motion and replaces the years-on-GitHub count with the live GitHub API
 value. Typography: Fraunces, Spectral, and IBM Plex Mono. Share cards are SVG sources in
 `assets/og/` rendered to PNG at 1200×630 (`rsvg-convert -w 1200 -h 630 assets/og/card.svg -o assets/og/card.png`).
+The build stops if `card.svg` does not carry the current title line, and the card's URL changes with
+the SVG so platforms refetch it.
 
 ## Preview
 

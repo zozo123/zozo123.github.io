@@ -7,6 +7,7 @@ Run: python3 tools/build_index.py
 """
 from __future__ import annotations
 
+import hashlib
 import html
 import json
 from pathlib import Path
@@ -38,6 +39,17 @@ def page_url(item: dict) -> str:
 
 def thumb(item: dict) -> str:
     return item.get("image") or f"assets/thumbs/{item['slug']}.jpg"
+
+
+def og_image() -> str:
+    """Share-card URL. The card is drawn by hand, so stop if it no longer carries TITLE.
+
+    The query changes with the SVG, so platforms that cache by image URL fetch the new card.
+    """
+    svg = (ROOT / "assets" / "og" / "card.svg").read_text(encoding="utf-8")
+    if h(TITLE) not in svg:
+        raise SystemExit("assets/og/card.svg does not carry TITLE: update it and re-render card.png (see README.md)")
+    return f"{SITE}assets/og/card.png?v={hashlib.sha256(svg.encode('utf-8')).hexdigest()[:8]}"
 
 
 def card(item: dict, number: int, *, plate: bool = False, flip: bool = False) -> str:
@@ -140,7 +152,7 @@ def render(data: dict) -> str:
 <meta property="og:title" content="Yossi Eliaz — Collected works: writing &amp; experiments">
 <meta property="og:description" content="Notes, measurements, and live experiments from building difficult systems: agent sandboxes, CI, genomics, and physics.">
 <meta property="og:url" content="{SITE}">
-<meta property="og:image" content="{SITE}assets/og/card.png">
+<meta property="og:image" content="{og_image()}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Yossi Eliaz, Writing &amp; experiments">
