@@ -260,7 +260,7 @@ section[id] { scroll-margin-top: 80px; }
   transition: transform .45s cubic-bezier(.2, .8, .25, 1.2);
 }
 .latest-plate:hover { transform: rotate(0deg) scale(1.015); }
-.latest-plate img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+.latest-plate img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
 .plate-caption {
   position: absolute; bottom: 11px; left: 14px;
   font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint);
