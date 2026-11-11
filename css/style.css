@@ -464,6 +464,16 @@ section[id] { scroll-margin-top: 80px; }
 .figure-card:hover .figure-links .figure-link, .selected-card .figure-links .figure-link:hover { letter-spacing: .1em; }
 .selected-card .figure-links .figure-link:hover { text-decoration: underline; text-underline-offset: 4px; }
 
+/* ---------- v6: masthead stays on one row ---------- */
+@media (min-width: 641px) and (max-width: 1100px) {
+  .mast-id { white-space: nowrap; letter-spacing: .14em; }
+  .mast-nav { gap: 14px; }
+}
+@media (min-width: 641px) and (max-width: 1000px) {
+  /* tablets: the Contents box lists the sections, so the masthead keeps only the links that leave the page */
+  .mast-nav a[href^="#"] { display: none; }
+}
+
 /* ---------- 404 page ---------- */
 .page-404 { min-height: 100vh; display: flex; flex-direction: column; }
 .page-404 > header, .page-404 > main, .page-404 > footer { width: 100%; }

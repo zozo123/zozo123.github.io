@@ -217,6 +217,7 @@ def render(data: dict) -> str:
       <a href="#writing">§01 Agents</a>
       <a href="#science">§02 Science</a>
       <a href="#essays">§03 Essays</a>
+      <a href="#talks">§04 Talks</a>
       <a class="mast-feature" href="{SITE}the-living-layer/">THE LIVING LAYER</a>
       <a href="{HOME}">Profile&nbsp;↗</a>
       <a class="mast-gh" href="https://github.com/zozo123">GitHub&nbsp;↗</a>
