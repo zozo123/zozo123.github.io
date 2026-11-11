@@ -10,6 +10,7 @@ from __future__ import annotations
 import hashlib
 import html
 import json
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,6 +28,7 @@ PROFILES = [
 SAME_AS = [url for _, url, _ in PROFILES]
 # Static fallback; js/main.js replaces it with the live value from the GitHub API.
 YEARS_ON_GITHUB = 15
+MONTHS = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 
 
 def h(value: object) -> str:
@@ -135,6 +137,8 @@ def render(data: dict) -> str:
     )
     selected = "".join(selected_card(i) for i in data["selected"])
     f = data["featured"]
+    # The revision date comes from the data, never the clock: CI diffs the generated files.
+    updated = date.fromisoformat(data["updated"])
     description = f"Writing and live experiments by {NAME} ({TITLE}) on agent sandboxes, CI, genomics, and physics."
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -196,7 +200,7 @@ def render(data: dict) -> str:
   <div class="hero-rule mono reveal in-load">
     <span class="hr-tag">eliaz : 2026 · living preprint · v3</span>
     <span class="hero-rule-line"></span>
-    <span id="today-date">OCT 2026</span>
+    <time id="updated" datetime="{updated.isoformat()}"><span class="hr-word">Updated </span>{MONTHS[updated.month - 1]} {updated.day}, {updated.year}</time>
   </div>
 
   <h1 class="hero-title" id="hero-name">

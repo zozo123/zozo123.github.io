@@ -423,6 +423,7 @@ section[id] { scroll-margin-top: 80px; }
   .figure-card.plate .fig-caption { border-top: 1px solid var(--rule); }
 }
 @media (max-width: 900px) {
+  .hr-word { display: none; } /* the date alone keeps the hero rule to the lines it had */
   .hero-meta { grid-template-columns: 1fr; gap: 36px; }
   .latest-inner { grid-template-columns: 1fr; gap: 44px; }
   .latest-plate { transform: rotate(0); }

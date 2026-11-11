@@ -1,13 +1,6 @@
 /* Collected works: motion and the live years-on-GitHub count. All content is static HTML. */
 document.body.classList.remove("no-js");
 
-const dateEl = document.getElementById("today-date");
-if (dateEl) {
-  dateEl.textContent = new Date()
-    .toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })
-    .toUpperCase();
-}
-
 document.querySelectorAll(".figure-thumb img, .latest-plate img").forEach((image) => {
   const hide = () => image.parentNode.classList.add("thumb-missing");
   image.addEventListener("error", hide);
